@@ -18,8 +18,8 @@
   <depend>generate_parameter_library</depend>
   <depend>yaml_cpp_vendor</depend>
 
-  <exec_depend>melfa_fr_description</exec_depend>
-  <exec_depend>melfa_fr_bringup</exec_depend>
+  <exec_depend>melfa_description</exec_depend>
+  <exec_depend>melfa_bringup</exec_depend>
   <exec_depend>controller_manager</exec_depend>
   <exec_depend>xacro</exec_depend>
   <exec_depend>urdf</exec_depend>
