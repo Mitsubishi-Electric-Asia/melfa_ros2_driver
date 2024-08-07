@@ -1,24 +1,24 @@
-<img src="./doc/figures/melfa_logo.png" width="238" height="48"> <img src="./doc/figures/ros2_logo.png" width="200" height="48">
+<img src="./doc/figures/MELFA_t.png" width="400" height="98"> <img src="./doc/figures/ROS-AP-logo.png" width="208" height="98">
 
-# __MITSUBISHI ELECTRIC INDUSTRIAL ROBOT MELFA__
+# __MITSUBISHI ELECTRIC INDUSTRIAL ROBOT MELFA ROS2 DRIVER__
     
 ## __1. Overview__
 
 Introducing the next generation of intelligent robots, incorporating advanced solutions technology and “e-F@ctory”, technologies and concepts developed and proven using Mitsubishi Electric’s own production facilities that go beyond basic robotic performance to find ways of reducing the TCO in everything from planning and design through to operation and maintenance. 
-<br>
+</br>
 
 [![RTR demo](https://markdown-videos.vercel.app/youtube/X7CBorolqrE?si=VlLh2xOvs8k0HvZc)](https://youtu.be/X7CBorolqrE?si=VlLh2xOvs8k0HvZc)
 [![MEAU demo](https://markdown-videos.vercel.app/youtube/Ks6ji6kw68c?si=KCWWB8-P_m3ofB4V)](https://youtu.be/Ks6ji6kw68c?si=KCWWB8-P_m3ofB4V)
 - [Learn more](https://www.mitsubishielectric.com/fa/products/rbt/robot/index.html)
 - [Robot catalog](https://dl.mitsubishielectric.com/dl/fa/document/catalog/robot/l(na)-09091eng/l09091m.pdf)
 
-<br/>
+</br>
 
 MELFA ROS2, co-developed with [ROS-Industrial Consortium Asia Pacific](https://rosindustrial.org/ric-apac), provides a suite of tools to enable the creation of advance solutions using our industry proven platform. Mitsubishi Electric provides a ros2 driver, ros2 io controllers, robot description files and moveit_config packages of each robot; optimized in-house by our developers to ensure high performance.
 
 ## __2. MELFA ROS2 Feature__
 
-MELFA ROS2 consist of six main componets: melfa_bringup, melfa_description, melfa_driver, melfa_io_controllers, melfa_msgs, various moveit_config packages.
+MELFA ROS2 consist of six main components: melfa_bringup, melfa_description, melfa_driver, melfa_io_controllers, melfa_msgs, various moveit_config packages.
 
 ### __melfa_bringup__
 
@@ -52,6 +52,74 @@ MELFA ROS2 consist of six main componets: melfa_bringup, melfa_description, melf
 - supports OMPL, Pilz Industrial Planner, CHOMP and Moveit servo.
 - optimized by our developers to ensure high performance in speed and accuracy.
 
+<table>
+<head>
+</head>
+    <tr>
+        <th colspan="1">Supported Robots</th>
+        <th colspan="3">Supported Robot Controllers</th>
+    </tr>
+    <tr>
+        <th>Robot Model</th>
+        <th>CR800-R</th>
+        <th>CR800-Q</th>
+        <th>CR800-D</th>
+    </tr>
+    <tr>
+        <td>RH-6FRH5520</td>
+        <td>&#9711;</td>
+        <td>&#9711;</td>
+        <td>&#9711;</td>
+    </tr>
+    <tr>
+        <td>RH-6CRH6020</td>
+        <td>&#10005;</td>
+        <td>&#10005;</td>
+        <td>&#9711;</td>
+    </tr>
+    <tr>
+        <td>RV-2FR</td>
+        <td>&#9711;</td>
+        <td>&#9711;</td>
+        <td>&#9711;</td>
+    </tr>
+    <tr>
+        <td>RV-4FR</td>
+        <td>&#9711;</td>
+        <td>&#9711;</td>
+        <td>&#9711;</td>
+    </tr>
+    <tr>
+        <td>RV-4FRL</td>
+        <td>&#9711;</td>
+        <td>&#9711;</td>
+        <td>&#9711;</td>
+    </tr>
+    <tr>
+        <td>RV-5AS</td>
+        <td>&#10005;</td>
+        <td>&#10005;</td>
+        <td>&#9711;</td>
+    </tr>
+    <tr>
+        <td>RV-7FRL</td>
+        <td>&#9711;</td>
+        <td>&#9711;</td>
+        <td>&#9711;</td>
+    </tr>
+    <tr>
+        <td>RV-8CRL</td>
+        <td>&#10005;</td>
+        <td>&#10005;</td>
+        <td>&#9711;</td>
+    </tr>
+    <tr>
+        <td>RV-13FRL</td>
+        <td>&#9711;</td>
+        <td>&#9711;</td>
+        <td>&#9711;</td>
+    </tr>
+</table>
 
 &#10146; <sup>1</sup>  __real time communication__ frequency is 286Hz for CR800-R & CR-800-D and 141Hz for CR800-Q.
 
@@ -61,17 +129,17 @@ MELFA ROS2 consist of six main componets: melfa_bringup, melfa_description, melf
 
 &#10146; <sup>4</sup>  __MXT__ is the command to enable __real time external control__.
 
->Note1: You can download the [Ethernet Function Instruction Manual](https://dl.mitsubishielectric.co.jp/dl/fa/document/empf/manual/robot/bfp-a3379/bfpa3379g.empf) from [Robot Industrial/Collaborative Robot MELFA Manual](https://www.mitsubishielectric.co.jp/fa/download/search.do?mode=manual&kisyu=/robot).<br/>
+>Note1: You can download the [Ethernet Function Instruction Manual](https://dl.mitsubishielectric.co.jp/dl/fa/document/empf/manual/robot/bfp-a3379/bfpa3379g.empf) from [Robot Industrial/Collaborative Robot MELFA Manual](https://www.mitsubishielectric.co.jp/fa/download/search.do?mode=manual&kisyu=/robot).</br>
 
 
 ## __3. MELFA ROS2 Usage and Installation__
 
-MELFA ROS2 is designed to interfce CR800 robot controllers with the ROS2 so that developers can leverage the contributions from the Open Source Community with an industry proven robot platform.
-<br/>
+MELFA ROS2 is designed to interface CR800 robot controllers with the ROS2 so that developers can leverage the contributions from the Open Source Community with an industry proven robot platform.
+</br>
 
-&#10148; If your ROS PC is installed with ROS 2 Humble Hawksbill, see [MELFA ROS2-humble](https://github.com/Mitsubishi-Electric-Asia/melfa_ros2/tree/humble) and follow the user guide.<br/>
+&#10148; If your ROS PC is installed with ROS 2 Humble Hawksbill, see [MELFA ROS2-humble](https://github.com/Mitsubishi-Electric-Asia/melfa_ros2/tree/humble) and follow the user guide.</br>
 
-- [MELFA ROS2 user guide](./doc/melfa_ros2_humble.md) : Usage and Installation of MELFA ROS2.
+- [MELFA ROS2 user guide](./doc/melfa_ros2_driver.md) : Usage and Installation of MELFA ROS2.
 - [RT Toolbox3 Setup](./doc/rt_toolbox3_setup.md) : Create your first RT Toolbox3 Project File for ROS2.
 - [RT Toolbox3 Simulator Setup](./doc/rt_sim_setup.md) : Connect to RT Toolbox3 simulator as if it is a real robot.
 - [RT Toolbox3 Real Robot Setup](./doc/rt_real_setup.md): Connect to a MELFA robot.
@@ -91,26 +159,26 @@ MELFA ROS2 is designed to interfce CR800 robot controllers with the ROS2 so that
 
 This section provides a brief introduction to naming conventions of MELFA robots. Below are images from our [robot catalog](https://dl.mitsubishielectric.com/dl/fa/document/catalog/robot/l(na)-09091eng/l09091m.pdf) describing the naming convention.
 
-For articulated robots (RV), it is fairly straigth forward as the variations that contribute to package differences are __Maximum load capacity__, __Series__ and __Arm length__. 
+For articulated robots (RV), it is fairly straigthforward as the variations that contribute to package differences are __Maximum load capacity__, __Series__ and __Arm length__. 
 
-<br/>
+</br>
 
 <img src="./doc/figures/naming_convention_rv.png" width="1000" heigth="500" >
 
-<br/>
+</br>
 
-For SCARA robots (RH), it is has more variations that contribute to packages differences such as __Maximum load capacity__, __Series__, __Arm length__ in cm and __Vertical stroke__ in cm.
+For SCARA robots (RH), it has more variations that contribute to packages differences such as __Maximum load capacity__, __Series__, __Arm length__ in cm and __Vertical stroke__ in cm.
 
-<br/>
+</br>
 
 <img src="./doc/figures/naming_convention_rh.png" width="1000" heigth="500" >
 
-<br/>
+</br>
 
 __Environment specifications__, __Internal wiring__ and __Controller type__ do not contribute to kinematic variations. However, it is important to take note of __Controller type__ as it may change the __Control frequency__ and/or __I/O controller__ settings.
 
 
 ## __6. Contact us / Technical support__
-More Support & Service, please contact us [@MEAP](https://sg.mitsubishielectric.com/fa/en/contact.html) or send us an email [@Dev team](muyao.liu@asia.meap.com) for development related enquiries.
+More Support & Service, please contact us [@MEAP](https://sg.mitsubishielectric.com/fa/en/contact.html). For contributing and reporting, refer to [this](./CONTRIBUTING.md) for development related enquiries.
 
 <div> </div>
