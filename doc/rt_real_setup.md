@@ -7,6 +7,7 @@ This section will guide you on setting up a new robot using a USB cable with fer
 ```
 Robot Factory Default IP address: 192.168.0.20
 ```
+
 Sections:
 
 1. __Connecting via USB Cable__
@@ -179,3 +180,9 @@ ros2 launch melfa_rv7frl_moveit_config rv7frl_moveit.launch.py
 
 </br>
 
+### Other guides:
+- [Home page](./../README.md)
+- [MELFA ROS2 user guide](./melfa_ros2_driver.md) : Usage and Installation of MELFA ROS2.
+- [RT Toolbox3 Setup](./rt_toolbox3_setup.md) : Create your first RT Toolbox3 Project File for ROS2.
+- [RT Toolbox3 Simulator Setup](./rt_sim_setup.md) : Connect to RT Toolbox3 simulator as if it is a real robot.
+- [RT Toolbox3 Real Robot Setup](./rt_real_setup.md): Connect to a MELFA robot.

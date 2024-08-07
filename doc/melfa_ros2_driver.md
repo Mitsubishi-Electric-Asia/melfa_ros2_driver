@@ -299,3 +299,11 @@ Launch Servo Keyboard Input [Terminal 3]
 
 ```
 ros2 run melfa_rv7frl_moveit_config servo_keyboard_input
+```
+
+### Other guides:
+- [Home page](./../README.md)
+- [MELFA ROS2 user guide](./melfa_ros2_driver.md) : Usage and Installation of MELFA ROS2.
+- [RT Toolbox3 Setup](./rt_toolbox3_setup.md) : Create your first RT Toolbox3 Project File for ROS2.
+- [RT Toolbox3 Simulator Setup](./rt_sim_setup.md) : Connect to RT Toolbox3 simulator as if it is a real robot.
+- [RT Toolbox3 Real Robot Setup](./rt_real_setup.md): Connect to a MELFA robot.

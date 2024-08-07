@@ -1,5 +1,12 @@
 <img src="./figures/MELFA_t.png" width="400" height="98"> <img src="./figures/ROS-AP-logo.png" width="208" height="98">
 
+### Other guides:
+- [Home page](./../README.md)
+- [MELFA ROS2 user guide](./melfa_ros2_driver.md) : Usage and Installation of MELFA ROS2.
+- [RT Toolbox3 Setup](./rt_toolbox3_setup.md) : Create your first RT Toolbox3 Project File for ROS2.
+- [RT Toolbox3 Simulator Setup](./rt_sim_setup.md) : Connect to RT Toolbox3 simulator as if it is a real robot.
+- [RT Toolbox3 Real Robot Setup](./rt_real_setup.md): Connect to a MELFA robot.
+  
 # Packages in the Repository
 - melfa_bringup: provides launch files for robot bringup
 - melfa_description: contains robot descriptions

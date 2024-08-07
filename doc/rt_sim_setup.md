@@ -6,8 +6,6 @@ This section will guide you to establish a UDP/IP connection between your ROS2 c
 
 &#10146; <sup>1</sup> __Real Time Monitoring__ : found in [Ethernet Function Instruction Manual](https://dl.mitsubishielectric.co.jp/dl/fa/document/empf/manual/robot/bfp-a3379/bfpa3379g.empf) from [Robot Industrial/Collaborative Robot MELFA Manual](https://www.mitsubishielectric.co.jp/fa/download/search.do?mode=manual&kisyu=/robot). Provides real time data at control cycle intervals, 3.5ms for CR800-R/D and 7.11ms for CR800-Q.
 
-To connect MELFA ROS2 to _RT Toolbox3 simulator_, your Windows device and _RT Toolbox3 simulator_ must have the same IP address.
-
 Sections:
 
 1. __Verifying Local IP Address on Windows__
@@ -105,3 +103,10 @@ ros2 launch melfa_rv7frl_moveit_config rv7frl_moveit.launch.py
   <img src="./figures/rv7frl_moveit.png" width="1000" height="600">
 
 </br>
+
+### Other guides:
+- [Home page](./../README.md)
+- [MELFA ROS2 user guide](./melfa_ros2_driver.md) : Usage and Installation of MELFA ROS2.
+- [RT Toolbox3 Setup](./rt_toolbox3_setup.md) : Create your first RT Toolbox3 Project File for ROS2.
+- [RT Toolbox3 Simulator Setup](./rt_sim_setup.md) : Connect to RT Toolbox3 simulator as if it is a real robot.
+- [RT Toolbox3 Real Robot Setup](./rt_real_setup.md): Connect to a MELFA robot.
