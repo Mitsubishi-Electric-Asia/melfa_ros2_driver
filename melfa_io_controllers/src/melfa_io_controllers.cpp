@@ -1,3 +1,17 @@
+  //  COPYRIGHT (C) 2024 Mitsubishi Electric Corporation
+
+  //  Licensed under the Apache License, Version 2.0 (the "License");
+  //  you may not use this file except in compliance with the License.
+  //  You may obtain a copy of the License at
+
+  //      http://www.apache.org/licenses/LICENSE-2.0
+
+  //  Unless required by applicable law or agreed to in writing, software
+  //  distributed under the License is distributed on an "AS IS" BASIS,
+  //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  //  See the License for the specific language governing permissions and
+  //  limitations under the License.
+  
 #include "melfa_io_controllers/melfa_io_controllers.hpp"
 
 namespace melfa_io_controllers
@@ -47,6 +61,10 @@ namespace melfa_io_controllers
     config.names.insert(config.names.end(), hand_io_command_interfaces_.begin(), hand_io_command_interfaces_.end());
     config.names.insert(config.names.end(), plc_link_io_command_interfaces_.begin(), plc_link_io_command_interfaces_.end());
     config.names.insert(config.names.end(), safety_io_command_interfaces_.begin(), safety_io_command_interfaces_.end());
+    config.names.insert(config.names.end(), io_unit_command_interfaces_.begin(), io_unit_command_interfaces_.end());
+    config.names.insert(config.names.end(), misc1_io_command_interfaces_.begin(), misc1_io_command_interfaces_.end());
+    config.names.insert(config.names.end(), misc2_io_command_interfaces_.begin(), misc2_io_command_interfaces_.end());
+    config.names.insert(config.names.end(), misc3_io_command_interfaces_.begin(), misc3_io_command_interfaces_.end());
     config.names.insert(config.names.end(), misc_io_command_interfaces_.begin(), misc_io_command_interfaces_.end());
 
     return config;
@@ -68,6 +86,10 @@ namespace melfa_io_controllers
     config.names.insert(config.names.end(), hand_io_state_interfaces_.begin(), hand_io_state_interfaces_.end());
     config.names.insert(config.names.end(), plc_link_io_state_interfaces_.begin(), plc_link_io_state_interfaces_.end());
     config.names.insert(config.names.end(), safety_io_state_interfaces_.begin(), safety_io_state_interfaces_.end());
+    config.names.insert(config.names.end(), io_unit_state_interfaces_.begin(), io_unit_state_interfaces_.end());
+    config.names.insert(config.names.end(), misc1_io_state_interfaces_.begin(), misc1_io_state_interfaces_.end());
+    config.names.insert(config.names.end(), misc2_io_state_interfaces_.begin(), misc2_io_state_interfaces_.end());
+    config.names.insert(config.names.end(), misc3_io_state_interfaces_.begin(), misc3_io_state_interfaces_.end());
     config.names.insert(config.names.end(), misc_io_state_interfaces_.begin(), misc_io_state_interfaces_.end());
 
     return config;
@@ -104,13 +126,24 @@ namespace melfa_io_controllers
     updateGPIO(hand_gpio_msg_, "Hand IO State", GpioIdentifier::hand_io_, hand_io_state_publisher_);
     updateGPIO(plc_link_gpio_msg_, "PLC Link IO State", GpioIdentifier::plc_link_io_, plc_link_io_state_publisher_);
     updateGPIO(safety_gpio_msg_, "Safety IO State", GpioIdentifier::safety_io_, safety_io_state_publisher_);
+    updateGPIO(io_unit_gpio_msg_, "IO Unit State", GpioIdentifier::io_unit_, io_unit_state_publisher_);
+    updateGPIO(misc1_gpio_msg_, "Misc1 IO State", GpioIdentifier::misc1_io_, misc1_io_state_publisher_);
+    updateGPIO(misc2_gpio_msg_, "Misc2 IO State", GpioIdentifier::misc2_io_, misc2_io_state_publisher_);
+    updateGPIO(misc3_gpio_msg_, "Misc3 IO State", GpioIdentifier::misc3_io_, misc3_io_state_publisher_);
+
+
 
     // Publishes Binary IO Control Mode
-    control_mode_config_ = std::bitset<8>(state_interfaces_.at(GpioIdentifier::control_mode_io).get_value()).to_ulong();
+    control_mode_config_ = std::bitset<7>(state_interfaces_.at(GpioIdentifier::control_mode_io).get_value()).to_ulong();
 
-    io_control_mode.hand_io_interface = (control_mode_config_ & 0b001) != 0;
-    io_control_mode.plc_link_io_interface = (control_mode_config_ & 0b010) != 0;
-    io_control_mode.safety_io_interface = (control_mode_config_ & 0b100) != 0;
+    io_control_mode.hand_io_interface = (control_mode_config_ & 0b0000001) != 0;
+    io_control_mode.plc_link_io_interface = (control_mode_config_ & 0b0000010) != 0;
+    io_control_mode.safety_io_interface = (control_mode_config_ & 0b0000100) != 0;
+    io_control_mode.io_unit_interface = (control_mode_config_ & 0b0001000) != 0;
+    io_control_mode.misc1_io_interface = (control_mode_config_ & 0b0010000) != 0;
+    io_control_mode.misc2_io_interface = (control_mode_config_ & 0b0100000) != 0;
+    io_control_mode.misc3_io_interface = (control_mode_config_ & 0b1000000) != 0;
+    
 
     control_mode_publisher_->publish(io_control_mode);
 
@@ -124,9 +157,16 @@ namespace melfa_io_controllers
       }
     };
 
-    resetIOCommandInterface(GpioIdentifier::hand_io_, control_mode_config_ & 0b001);
-    resetIOCommandInterface(GpioIdentifier::plc_link_io_, control_mode_config_ & 0b010);
-    resetIOCommandInterface(GpioIdentifier::safety_io_, control_mode_config_ & 0b100);
+    resetIOCommandInterface(GpioIdentifier::hand_io_, control_mode_config_ & 0b0000001);
+    resetIOCommandInterface(GpioIdentifier::plc_link_io_, control_mode_config_ & 0b0000010);
+    resetIOCommandInterface(GpioIdentifier::safety_io_, control_mode_config_ & 0b0000100);
+    resetIOCommandInterface(GpioIdentifier::io_unit_, control_mode_config_ & 0b0001000);
+    resetIOCommandInterface(GpioIdentifier::misc1_io_, control_mode_config_ & 0b0010000);
+    resetIOCommandInterface(GpioIdentifier::misc2_io_, control_mode_config_ & 0b0100000);
+    resetIOCommandInterface(GpioIdentifier::misc3_io_, control_mode_config_ & 0b1000000);
+
+
+
 
     ctrl_type_msg.controller_type = (state_interfaces_.at(GpioIdentifier::ctrl_type).get_value() == 1.0) ? "R" : ((state_interfaces_.at(GpioIdentifier::ctrl_type).get_value() == 2.0) ? "Q" : "D");
 
@@ -153,11 +193,20 @@ namespace melfa_io_controllers
       hand_io_state_interfaces_ = get_node()->get_parameter("hand_io_state_interfaces").as_string_array();
       plc_link_io_state_interfaces_ = get_node()->get_parameter("plc_link_io_state_interfaces").as_string_array();
       safety_io_state_interfaces_ = get_node()->get_parameter("safety_io_state_interfaces").as_string_array();
+      io_unit_state_interfaces_ = get_node()->get_parameter("io_unit_state_interfaces").as_string_array();
+      misc1_io_state_interfaces_ = get_node()->get_parameter("misc1_io_state_interfaces").as_string_array();
+      misc2_io_state_interfaces_ = get_node()->get_parameter("misc2_io_state_interfaces").as_string_array();
+      misc3_io_state_interfaces_ = get_node()->get_parameter("misc3_io_state_interfaces").as_string_array();
       misc_io_state_interfaces_ = get_node()->get_parameter("misc_io_state_interfaces").as_string_array();
 
       hand_io_command_interfaces_ = get_node()->get_parameter("hand_io_command_interfaces").as_string_array();
       plc_link_io_command_interfaces_ = get_node()->get_parameter("plc_link_io_command_interfaces").as_string_array();
       safety_io_command_interfaces_ = get_node()->get_parameter("safety_io_command_interfaces").as_string_array();
+      io_unit_command_interfaces_ = get_node()->get_parameter("io_unit_command_interfaces").as_string_array();
+      misc1_io_command_interfaces_ = get_node()->get_parameter("misc1_io_command_interfaces").as_string_array();
+      misc2_io_command_interfaces_ = get_node()->get_parameter("misc2_io_command_interfaces").as_string_array();
+      misc3_io_command_interfaces_ = get_node()->get_parameter("misc3_io_command_interfaces").as_string_array();
+
       misc_io_command_interfaces_ = get_node()->get_parameter("misc_io_command_interfaces").as_string_array();
 
       hand_io_state_publisher_ = get_node()->create_publisher<melfa_msgs::msg::GpioState>(
@@ -168,6 +217,18 @@ namespace melfa_io_controllers
 
       safety_io_state_publisher_ = get_node()->create_publisher<melfa_msgs::msg::GpioState>(
           "~/safety_io_state", rclcpp::SystemDefaultsQoS());
+
+      io_unit_state_publisher_ = get_node()->create_publisher<melfa_msgs::msg::GpioState>(
+          "~/io_unit_state", rclcpp::SystemDefaultsQoS());
+      
+      misc1_io_state_publisher_ = get_node()->create_publisher<melfa_msgs::msg::GpioState>(
+          "~/misc1_io_state", rclcpp::SystemDefaultsQoS());
+
+      misc2_io_state_publisher_ = get_node()->create_publisher<melfa_msgs::msg::GpioState>(
+          "~/misc2_io_state", rclcpp::SystemDefaultsQoS());
+
+      misc3_io_state_publisher_ = get_node()->create_publisher<melfa_msgs::msg::GpioState>(
+          "~/misc3_io_state", rclcpp::SystemDefaultsQoS());
 
       controller_type_publisher_ = get_node()->create_publisher<melfa_msgs::msg::ControllerType>(
           "~/controller_type", rclcpp::SystemDefaultsQoS());
@@ -260,6 +321,22 @@ namespace melfa_io_controllers
     {
       processIO(command_interfaces_, req, GpioIdentifier::safety_io_, safety_io_mode, ctrl_limits[7]);
     }
+    else if (req->bitid >= ctrl_limits[12] && req->bitid <= ctrl_limits[13])
+    {
+      processIO(command_interfaces_, req, GpioIdentifier::io_unit_, io_unit_mode_, ctrl_limits[13]);
+    }
+    else if (req->bitid >= ctrl_limits[14] && req->bitid <= ctrl_limits[15])
+    {
+      processIO(command_interfaces_, req, GpioIdentifier::misc1_io_, misc1_io_mode_, ctrl_limits[15]);
+    }
+    else if (req->bitid >= ctrl_limits[16] && req->bitid <= ctrl_limits[17])
+    {
+      processIO(command_interfaces_, req, GpioIdentifier::misc2_io_, misc2_io_mode_, ctrl_limits[17]);
+    }
+    else if (req->bitid >= ctrl_limits[18] && req->bitid <= ctrl_limits[19])
+    {
+      processIO(command_interfaces_, req, GpioIdentifier::misc3_io_, misc3_io_mode_, ctrl_limits[19]);
+    }
     else
     {
       RCLCPP_WARN(
@@ -334,6 +411,22 @@ namespace melfa_io_controllers
     {
       commandGPIO(GpioIdentifier::safety_io_, ctrl_limits[7]);
     }
+    else if (io_cmd_->bitid >= ctrl_limits[12] && io_cmd_->bitid <= ctrl_limits[13])
+    {
+      commandGPIO(GpioIdentifier::io_unit_, ctrl_limits[13]);
+    }
+    else if (io_cmd_->bitid >= ctrl_limits[14] && io_cmd_->bitid <= ctrl_limits[15])
+    {
+      commandGPIO(GpioIdentifier::misc1_io_, ctrl_limits[15]);
+    }
+    else if (io_cmd_->bitid >= ctrl_limits[16] && io_cmd_->bitid <= ctrl_limits[17])
+    {
+      commandGPIO(GpioIdentifier::misc2_io_, ctrl_limits[17]);
+    }
+    else if (io_cmd_->bitid >= ctrl_limits[18] && io_cmd_->bitid <= ctrl_limits[19])
+    {
+      commandGPIO(GpioIdentifier::misc3_io_, ctrl_limits[19]);
+    }
     else
     {
       RCLCPP_WARN(
@@ -358,13 +451,18 @@ namespace melfa_io_controllers
      * @param res The response with the result of the configuration service.
      * @returns true if configured else false
      */
-    std::string control_mode_binary_ = std::to_string(req->safety_io_interface) +
+    std::string control_mode_binary_ = std::to_string(req->misc3_io_interface) +
+                                       std::to_string(req->misc2_io_interface) +
+                                       std::to_string(req->misc1_io_interface) +
+                                       std::to_string(req->io_unit_interface) +
+                                       std::to_string(req->safety_io_interface) +
                                        std::to_string(req->plc_link_io_interface) +
                                        std::to_string(req->hand_io_interface);
+                                       
 
-    int control_mode_int_ = std::bitset<3>(control_mode_binary_).to_ulong();
+    int control_mode_int_ = std::bitset<7>(control_mode_binary_).to_ulong();
 
-    res->success = (control_mode_int_ <= 0b111) ? (command_interfaces_[GpioIdentifier::control_mode_io].set_value(
+    res->success = (control_mode_int_ <= 0b1111111) ? (command_interfaces_[GpioIdentifier::control_mode_io].set_value(
                                                        static_cast<double>(control_mode_int_)),
                                                    true)
                                                 : false;
@@ -410,6 +508,10 @@ namespace melfa_io_controllers
       hand_io_state_publisher_.reset();
       plc_link_io_state_publisher_.reset();
       safety_io_state_publisher_.reset();
+      io_unit_state_publisher_.reset();
+      misc1_io_state_publisher_.reset();
+      misc2_io_state_publisher_.reset();
+      misc3_io_state_publisher_.reset();
       configure_gpio_srv_.reset();
       configure_mode_srv_.reset();
     }

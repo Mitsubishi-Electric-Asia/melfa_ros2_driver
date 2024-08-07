@@ -1,3 +1,17 @@
+#    COPYRIGHT (C) 2024 Mitsubishi Electric Corporation
+
+#    Licensed under the Apache License, Version 2.0 (the "License");
+#    you may not use this file except in compliance with the License.
+#    You may obtain a copy of the License at
+
+#        http://www.apache.org/licenses/LICENSE-2.0
+
+#    Unless required by applicable law or agreed to in writing, software
+#    distributed under the License is distributed on an "AS IS" BASIS,
+#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#    See the License for the specific language governing permissions and
+#    limitations under the License.
+
 controller_manager:
   ros__parameters:
     update_rate: 286  #Hz
@@ -51,6 +65,30 @@ gpio_controller:
       - safety_io/bit_send_type
       - safety_io/input_data
       - safety_io/output_data
+    io_unit_state_interfaces:
+      - io_unit/bit_id
+      - io_unit/bit_mask
+      - io_unit/bit_send_type
+      - io_unit/input_data
+      - io_unit/output_data
+    misc1_io_state_interfaces:
+      - misc1_io/bit_id
+      - misc1_io/bit_mask
+      - misc1_io/bit_send_type
+      - misc1_io/input_data
+      - misc1_io/output_data
+    misc2_io_state_interfaces:
+      - misc2_io/bit_id
+      - misc2_io/bit_mask
+      - misc2_io/bit_send_type
+      - misc2_io/input_data
+      - misc2_io/output_data
+    misc3_io_state_interfaces:
+      - misc3_io/bit_id
+      - misc3_io/bit_mask
+      - misc3_io/bit_send_type
+      - misc3_io/input_data
+      - misc3_io/output_data
     misc_io_state_interfaces:
       - io_control_mode/io_mode
       - ctrl/ctrl_type
@@ -72,6 +110,30 @@ gpio_controller:
       - safety_io/bit_recv_type
       - safety_io/bit_send_type
       - safety_io/output_data
+    io_unit_command_interfaces:
+      - io_unit/bit_id
+      - io_unit/bit_mask
+      - io_unit/bit_recv_type
+      - io_unit/bit_send_type
+      - io_unit/output_data
+    misc1_io_command_interfaces:
+      - misc1_io/bit_id
+      - misc1_io/bit_mask
+      - misc1_io/bit_recv_type
+      - misc1_io/bit_send_type
+      - misc1_io/output_data
+    misc2_io_command_interfaces:
+      - misc2_io/bit_id
+      - misc2_io/bit_mask
+      - misc2_io/bit_recv_type
+      - misc2_io/bit_send_type
+      - misc2_io/output_data
+    misc3_io_command_interfaces:
+      - misc3_io/bit_id
+      - misc3_io/bit_mask
+      - misc3_io/bit_recv_type
+      - misc3_io/bit_send_type
+      - misc3_io/output_data
     misc_io_command_interfaces:
       - io_control_mode/io_mode
       - ctrl/ctrl_type

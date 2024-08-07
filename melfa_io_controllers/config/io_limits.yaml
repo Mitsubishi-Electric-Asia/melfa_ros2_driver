@@ -1,5 +1,20 @@
-# Controller type: [ Hand_io_min, Hand_io_max, plc_link_io_min, plc_link_io_max, DSI1-8-A Min, DSI1-8-A Max,  DSI1-8-B Min, DSI1-8-B Max,
-# DSO1-4-A Min, DSO1-4-A Max, DSO1-4-B Min, DSO1-4-B Max]
-R: [ 900, 907, 10000, 18191, 128, 135, 160, 167, 128, 131, 160, 163]
-Q: [ 900, 907, 10000, 18191, 128, 135, 160, 167, 128, 131, 160, 163]
-D: [ 900, 907, 10000, 18191, 128, 135, 160, 167, 128, 131, 160, 163]
+  #  COPYRIGHT (C) 2024 Mitsubishi Electric Corporation
+
+  #  Licensed under the Apache License, Version 2.0 (the "License");
+  #  you may not use this file except in compliance with the License.
+  #  You may obtain a copy of the License at
+
+  #      http://www.apache.org/licenses/LICENSE-2.0
+
+  #  Unless required by applicable law or agreed to in writing, software
+  #  distributed under the License is distributed on an "AS IS" BASIS,
+  #  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  #  See the License for the specific language governing permissions and
+  #  limitations under the License.
+  
+# Controller type: [ Hand_io_min, Hand_io_max, plc_link_io_min, plc_link_io_max, 
+# DSI1-8-A Min, DSI1-8-A Max,  DSI1-8-B Min, DSI1-8-B Max, DSO1-4-A Min, DSO1-4-A Max, DSO1-4-B Min, DSO1-4-B Max, 
+# io_unit_min, io_unit_max, misc1_min, misc1_max, misc2_min, misc2_max, misc3_min, misc3_max]
+R: [ 900, 907, 10000, 12047, 128, 135, 160, 167, 128, 131, 160, 163, 0, 127, 12048, 14095, 14096, 16143, 16144, 18191 ]
+Q: [ 900, 907, 10000, 12047, 128, 135, 160, 167, 128, 131, 160, 163, 0, 127, 12048, 14095, 14096, 16143, 16144, 18191 ]
+D: [ 900, 907, 10000, 12047, 128, 135, 160, 167, 128, 131, 160, 163, 0, 127, 6000, 8047, 2000, 5071, 12048, 14095 ]

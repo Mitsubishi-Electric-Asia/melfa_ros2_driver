@@ -1,5 +1,19 @@
-#ifndef MELFA_FR_DRIVER__HARDWARE_INTERFACE_HPP_
-#define MELFA_FR_DRIVER__HARDWARE_INTERFACE_HPP_
+  //  COPYRIGHT (C) 2024 Mitsubishi Electric Corporation
+
+  //  Licensed under the Apache License, Version 2.0 (the "License");
+  //  you may not use this file except in compliance with the License.
+  //  You may obtain a copy of the License at
+
+  //      http://www.apache.org/licenses/LICENSE-2.0
+
+  //  Unless required by applicable law or agreed to in writing, software
+  //  distributed under the License is distributed on an "AS IS" BASIS,
+  //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  //  See the License for the specific language governing permissions and
+  //  limitations under the License.
+  
+#ifndef MELFA_DRIVER__HARDWARE_INTERFACE_HPP_
+#define MELFA_DRIVER__HARDWARE_INTERFACE_HPP_
 
 // Include headers for ROS 2 control hardware_interface
 #include "hardware_interface/hardware_info.hpp"                // Declaration related to hardware information
@@ -73,7 +87,6 @@ private:
   uint8_t j7_linear;
   uint8_t j8_linear;
 
-
   bool execution_init_;
   unsigned int binary_config_;
   
@@ -92,6 +105,22 @@ private:
   //  Safety Interfaces
   std::vector<double> safety_io_states_;
   std::vector<double> safety_io_commands_;
+  
+  //  IO Unit Interfaces
+  std::vector<double> io_unit_states_;
+  std::vector<double> io_unit_commands_;
+
+  //  Misc1 Interfaces
+  std::vector<double> misc1_io_states_;
+  std::vector<double> misc1_io_commands_;
+
+  //  Misc2 Interfaces
+  std::vector<double> misc2_io_states_;
+  std::vector<double> misc2_io_commands_;
+
+  //  Misc3 Interfaces
+  std::vector<double> misc3_io_states_;
+  std::vector<double> misc3_io_commands_;
 
   // Binary IO Control Mode Interfaces 
   std::vector<double> mode_io_command_;
@@ -108,9 +137,14 @@ private:
   std::vector<uint16_t> hand_io_limits_;
   std::vector<uint16_t> plc_link_io_limits_;
   std::vector<uint16_t> safety_input_limits_;
-  std::vector<uint16_t> safety_output_limits_; 
+  std::vector<uint16_t> safety_output_limits_;
+  std::vector<uint16_t> io_unit_limits_; 
+  std::vector<uint16_t> misc1_io_limits_;
+  std::vector<uint16_t> misc2_io_limits_; 
+  std::vector<uint16_t> misc3_io_limits_; 
+
 
 };
 
 } // namespace melfa_driver
-#endif  // MELFA_FR_DRIVER__HARDWARE_INTERFACE_HPP_
+#endif  // MELFA_DRIVER__HARDWARE_INTERFACE_HPP_

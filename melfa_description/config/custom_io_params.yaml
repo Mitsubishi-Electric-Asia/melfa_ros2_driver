@@ -1,22 +1,49 @@
+#    COPYRIGHT (C) 2024 Mitsubishi Electric Corporation
+
+#    Licensed under the Apache License, Version 2.0 (the "License");
+#    you may not use this file except in compliance with the License.
+#    You may obtain a copy of the License at
+
+#        http://www.apache.org/licenses/LICENSE-2.0
+
+#    Unless required by applicable law or agreed to in writing, software
+#    distributed under the License is distributed on an "AS IS" BASIS,
+#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#    See the License for the specific language governing permissions and
+#    limitations under the License.
+
 controller_limits:
   R:
     hand_io_limits: 900,907
-    plc_link_io_limits: 10000,18191 
+    plc_link_io_limits: 10000,12047
     safety_input_limits: 128,135,160,167 
     safety_output_limits: 128,131,160,163
+    io_unit_limits: 0, 127
+    misc1_io_limits: 12048, 14095
+    misc2_io_limits: 14096, 16143
+    misc3_io_limits: 16144, 18191
+
 
   Q:
     hand_io_limits: 900,907
-    plc_link_io_limits: 10000,18191 
+    plc_link_io_limits: 10000,12047 
     safety_input_limits: 128,135,160,167
     safety_output_limits: 128,131,160,163
+    io_unit_limits: 0, 127
+    misc1_io_limits: 12048, 14095
+    misc2_io_limits: 14096, 16143
+    misc3_io_limits: 16144, 18191
 
   D:
     hand_io_limits: 900,907
-    plc_link_io_limits: 10000,18191 
+    plc_link_io_limits: 10000,12047
     safety_input_limits: 128,135,160,167
     safety_output_limits: 128,131,160,163
+    io_unit_limits: 0, 127
+    misc1_io_limits: 6000, 8047
+    misc2_io_limits: 2000, 5071 
+    misc3_io_limits: 12048, 14095
 
 control_mode_io:
-  io_mode: 111
+  io_mode: 1111111
 
