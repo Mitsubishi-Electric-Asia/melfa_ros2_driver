@@ -1,4 +1,4 @@
-<img src="./figures/melfa_logo.png" width="238" height="48"> <img src="./figures/ros2_logo.png" width="200" height="48">
+<img src="./figures/MELFA_t.png" width="400" height="98"> <img src="./figures/ROS-AP-logo.png" width="208" height="98">
 
 # __Connecting to RT Toolbox3 Simulator__
 
@@ -20,63 +20,55 @@ This section will guide you to find your local IP address on your Windows10 devi
 
 1. Go to __control panel__ &rArr; __Network and Internet__ &rArr; __Network and Sharing Centre__ and select __Change adapter settings__. Your Network adapters will be displayed in a popup window.
 
-<br/>
+</br>
 
 <img src="./figures/local_ip.png" width="960" height="540">
 
-<br/>
+</br>
 
 2. Select your network adapter that you wish to connect to your ROS2 computer. Select __Properties__ &rArr; __Internet Protocol Version 4 (TCP/IPv4)__. In the popup window, you can change your IP to your prefered IP address in your local network. Take note of the IP address you have chosen as you will need to input the same IP address into RT Toolbox3.
 
-<br/>
+</br>
 
 <img src="./figures/local_ip_final.png" width="960" height="540">
 
-<br/>
+</br>
 
-3. Go to the RT Toolbox3 project file that you have setup in the previous tutorial. Select __Parameter__ &rArr; __Communication Parameter__. In the popup window, select __IP Address__. Input your Windows device local IP address as shown below. Select __Write__ at the bottom read corner of the window. Ensure that it is written in.
+3. Select __Simulator__ to launch __RT Toolbox3 simulator__.
 
-<br/>
-
-<img src="./figures/change_robot_ip.png" width="960" height="540">
-
-<br/>
-
-4. Select __Simulator__ to launch __RT Toolbox3 simulator__.
-
-<br/>
+</br>
 
 <img src="./figures/click_sim.png" width="960" height="540">
 
-<br/>
+</br>
 
-5. On the __Operation Panel__ (Green popup window for simulated robot), click on the __Select__ button and select the _robot Program_ you have created. Click __OK__. 
+4. On the __Operation Panel__ (Green popup window for simulated robot), click on the __Select__ button and select the _robot Program_ you have created. Click __OK__. 
 
-<br/>
+</br>
 
 <img src="./figures/sel_prg.png" width="960" height="540">
 
-<br/>
+</br>
 
-6. On the __Operation Panel__ (Green popup window for simulated robot), click on the __blue START__ button 
+5. On the __Operation Panel__ (Green popup window for simulated robot), click on the __blue START__ button 
 
-<br/>
+</br>
   <img src="./figures/sel_start.png" width="960" height="540">
 
-<br/>
+</br>
 
 ## __2. Verifying Local IP address on Ubuntu 22.04LTS__
 
 This section will guide you to find your local IP address on your Ubuntu 22.04LTS device. The process is similar on other Ubuntu versions.
 
 1. Go to __Settings__ &rArr; __Network__ &rArr; __Wired (+)__ to create a new ethernet profile. Under __IPv4 Method__, select __Manual__ and input your preferred IP address for your Linux computer.
-<br/>
+</br>
 
   <img src="./figures/linux_ip.png" width="1000" height="800"> 
 
-<br/>
+</br>
 
-2. From your Windows computer, ping your Linux computer. You may not be able to ping your Windows computer from your Linux computer due to Windows settings. If ping is unsuccessful, verfiy your Windows and Linux IP addresses and try again.
+2. From your Windows computer, ping your Linux computer. You may not be able to ping your Windows computer from your Linux computer due to Windows settings. If ping is unsuccessful, verify your Windows and Linux IP addresses and try again.
 
 ~~~
 #ping <Linux local IP address>
@@ -97,19 +89,19 @@ ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=false cont
 ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=false controller_type:="R" robot_ip:=192.168.3.100 launch_servo:=true
 ~~~
 
-<br/>
+</br>
 
   <img src="./figures/rv7frl_bringup.png" width="1000" height="600">
 
-<br/>
+</br>
 2. To launch moveit. MELFA ROS2 moveit_config packages are natively compatible with OMPL, Pilz industrial planner, CHOMP and Moveit Servo.
 
 ```
 ros2 launch melfa_rv7frl_moveit_config rv7frl_moveit.launch.py
 ```
 
-<br/>
+</br>
 
   <img src="./figures/rv7frl_moveit.png" width="1000" height="600">
 
-<br/>
+</br>
