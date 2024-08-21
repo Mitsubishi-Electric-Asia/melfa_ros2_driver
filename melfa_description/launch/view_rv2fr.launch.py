@@ -36,7 +36,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             'description_file',
-            default_value='rv5as/rv5as.urdf.xacro',
+            default_value='rv2fr/rv2fr.urdf.xacro',
             description='URDF/XACRO description file with the robot.',
         )
     )
@@ -73,7 +73,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             'robot_port',
-            default_value='10100',
+            default_value='10000',
             description='Robot port.',
         )
     )
@@ -130,7 +130,7 @@ def generate_launch_description():
     robot_description = {'robot_description': robot_description_content}
 
     rviz_config_file = PathJoinSubstitution(
-        [FindPackageShare(description_package), 'rviz', 'rv5as.rviz']
+        [FindPackageShare(description_package), 'rviz', 'rv2fr.rviz']
     )
 
     joint_state_pub_gui_node = Node(
@@ -152,6 +152,7 @@ def generate_launch_description():
         output='log',
         arguments=['-d', rviz_config_file],
     )
+
     nodes = [
         joint_state_pub_gui_node,
         robot_state_pub_node,

@@ -1,5 +1,8 @@
 <?xml version="1.0" ?>
 <robot name="rv5as">
+    <material name="white">
+            <color rgba="1.0 1.0 1.0 1.0"/>
+    </material>
     <joint name="Mate1" type="fixed">
         <origin xyz="0 0 0" rpy="0 0 0" />
         <parent link="world" />
@@ -54,100 +57,107 @@
     </joint>
     <link name="rv5as_base">
         <visual>
+            <material name="white"/>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://melfa_description/meshdata/rv5as/base.STL" scale="1 1 1" />
+                <mesh filename="package://melfa_description/meshes/rv5as/base.STL" scale="1 1 1" />
             </geometry>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://melfa_description/meshdata/rv5as/base.STL" scale="1 1 1" />
+                <mesh filename="package://melfa_description/meshes/rv5as/base.STL" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
     <link name="rv5as_default_tcp" />
     <link name="rv5as_shoulder">
         <visual>
+            <material name="white"/>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://melfa_description/meshdata/rv5as/shoulder.STL" scale="1 1 1" />
+                <mesh filename="package://melfa_description/meshes/rv5as/shoulder.STL" scale="1 1 1" />
             </geometry>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://melfa_description/meshdata/rv5as/shoulder.STL" scale="1 1 1" />
+                <mesh filename="package://melfa_description/meshes/rv5as/shoulder.STL" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
     <link name="rv5as_upper_arm">
         <visual>
+            <material name="white"/>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://melfa_description/meshdata/rv5as/upper_arm.STL" scale="1 1 1" />
+                <mesh filename="package://melfa_description/meshes/rv5as/upper_arm.STL" scale="1 1 1" />
             </geometry>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://melfa_description/meshdata/rv5as/upper_arm.STL" scale="1 1 1" />
+                <mesh filename="package://melfa_description/meshes/rv5as/upper_arm.STL" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
     <link name="rv5as_elbow">
         <visual>
+            <material name="white"/>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://melfa_description/meshdata/rv5as/elbow.STL" scale="1 1 1" />
+                <mesh filename="package://melfa_description/meshes/rv5as/elbow.STL" scale="1 1 1" />
             </geometry>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://melfa_description/meshdata/rv5as/elbow.STL" scale="1 1 1" />
+                <mesh filename="package://melfa_description/meshes/rv5as/elbow.STL" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
     <link name="rv5as_forearm">
         <visual>
+            <material name="white"/>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://melfa_description/meshdata/rv5as/forearm.STL" scale="1 1 1" />
+                <mesh filename="package://melfa_description/meshes/rv5as/forearm.STL" scale="1 1 1" />
             </geometry>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://melfa_description/meshdata/rv5as/forearm.STL" scale="1 1 1" />
+                <mesh filename="package://melfa_description/meshes/rv5as/forearm.STL" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
     <link name="rv5as_wrist">
         <visual>
+            <material name="white"/>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://melfa_description/meshdata/rv5as/wrist.STL" scale="1 1 1" />
+                <mesh filename="package://melfa_description/meshes/rv5as/wrist.STL" scale="1 1 1" />
             </geometry>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://melfa_description/meshdata/rv5as/wrist.STL" scale="1 1 1" />
+                <mesh filename="package://melfa_description/meshes/rv5as/wrist.STL" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
     <link name="rv5as_hand_flange">
         <visual>
+            <material name="white"/>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://melfa_description/meshdata/rv5as/hand_flange.STL" scale="1 1 1" />
+                <mesh filename="package://melfa_description/meshes/rv5as/hand_flange.STL" scale="1 1 1" />
             </geometry>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://melfa_description/meshdata/rv5as/hand_flange.STL" scale="1 1 1" />
+                <mesh filename="package://melfa_description/meshes/rv5as/hand_flange.STL" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
