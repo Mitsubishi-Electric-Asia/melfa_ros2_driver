@@ -44,7 +44,6 @@ rh6crh6020_controller:
     action_monitor_rate: 20.0 # Defaults to 20
 
 gpio_controller:
-  gpio_controller:
   ros__parameters:
     hand_io_state_interfaces:
       - hand_io/bit_id

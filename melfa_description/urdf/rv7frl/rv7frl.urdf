@@ -1,6 +1,9 @@
 <?xml version="1.0" ?>
 <robot name="rv7frl">
-    <joint name="Mate1" type="fixed">
+    <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+    </material>
+    <joint name="rv7frl_world_to_base" type="fixed">
         <origin xyz="0 0 0" rpy="0 -0 0" />
         <parent link="world" />
         <child link="rv7frl_base" />
@@ -54,6 +57,7 @@
     </joint>
     <link name="rv7frl_base">
         <visual>
+            <material name="white"/>
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/base.STL" />
             </geometry>
@@ -69,6 +73,7 @@
     <link name="rv7frl_default_tcp" />
     <link name="rv7frl_elbow">
         <visual>
+            <material name="white"/>
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/elbow.STL" />
             </geometry>
@@ -83,6 +88,7 @@
     </link>
     <link name="rv7frl_forearm">
         <visual>
+            <material name="white"/>
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/forearm.STL" />
             </geometry>
@@ -97,6 +103,7 @@
     </link>
     <link name="rv7frl_hand_flange">
         <visual>
+            <material name="white"/>
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/hand_flange.STL" />
             </geometry>
@@ -111,6 +118,7 @@
     </link>
     <link name="rv7frl_shoulder">
         <visual>
+            <material name="white"/>
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/shoulder.STL" />
             </geometry>
@@ -125,6 +133,7 @@
     </link>
     <link name="rv7frl_upper_arm">
         <visual>
+            <material name="white"/>
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/upper_arm.STL" />
             </geometry>
@@ -139,6 +148,7 @@
     </link>
     <link name="rv7frl_wrist">
         <visual>
+            <material name="white"/>
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/wrist.STL" />
             </geometry>

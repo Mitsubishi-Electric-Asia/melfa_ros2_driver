@@ -36,8 +36,6 @@
         <joint name="rv7frl_joint_5" value="-1.5708"/>
         <joint name="rv7frl_joint_6" value="0"/>
     </group_state>
-    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
-    <virtual_joint name="Mate1" type="fixed" parent_frame="world" child_link="rv7frl_base"/>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="rv7frl_base" link2="rv7frl_shoulder" reason="Adjacent"/>
     <disable_collisions link1="rv7frl_base" link2="rv7frl_upper_arm" reason="Never"/>

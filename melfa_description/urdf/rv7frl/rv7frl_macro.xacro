@@ -4,7 +4,7 @@
         <material name="white">
             <color rgba="1.0 1.0 1.0 1.0"/>
         </material>
-        <joint name="Mate1" type="fixed">
+        <joint name="rv7frl_world_to_base" type="fixed">
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <!-- <parent link="world" /> -->
             <!-- base's praent link -->
