@@ -20,7 +20,16 @@ git clone -b humble https://github.com/Mitsubishi-Electric-Asia/melfa_ros2_drive
 source /opt/ros/humble/setup.bash
 ```
 
-2. Update package dependency sources
+2. Install moveit servo and chomp
+
+```
+sudo apt install ros-humble-moveit-chomp-optimizer-adapter
+sudo apt install ros-humble-moveit-planners-chomp
+sudo apt install ros-humble-chomp-motion-planner
+sudo apt install ros-humble-moveit-servo
+```
+
+3. Update package dependency sources
 
 ```
 cd ~/melfa_ws
@@ -76,10 +85,16 @@ ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=true contr
 ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=false controller_type:=<CONTROLLER TYPE>  robot_ip:=<ROBOT IP>
 ```
 
-Eg:
+Eg: Connecting to RT Toolbox3 simulator or real robot.
 
 ```
 ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=false controller_type:="R" robot_ip:=192.168.3.100
+```
+
+Eg: Rviz simulation.
+
+```
+ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=true controller_type:="R"
 ```
 
 </br>
@@ -88,7 +103,7 @@ ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=false cont
 
 </br>
 
-3. Launch MoveIt. [Terminal 2]
+1. Launch MoveIt. [Terminal 2]
 
 ```
 ros2 launch melfa_rv7frl_moveit_config rv7frl_moveit.launch.py
