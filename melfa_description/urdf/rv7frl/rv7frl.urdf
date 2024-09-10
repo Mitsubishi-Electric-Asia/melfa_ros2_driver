@@ -4,54 +4,54 @@
         <color rgba="1.0 1.0 1.0 1.0"/>
     </material>
     <joint name="rv7frl_world_to_base" type="fixed">
-        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <parent link="world" />
         <child link="rv7frl_base" />
     </joint>
     <joint name="rv7frl_hand_flange-to-default_tcp" type="fixed">
-        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <parent link="rv7frl_hand_flange" />
         <child link="rv7frl_default_tcp" />
     </joint>
     <joint name="rv7frl_joint_1" type="revolute">
         <axis xyz="0 0 1" />
         <limit lower="-4.188790" upper="4.188790" effort="1" velocity="5.026548" />
-        <origin xyz="0 0 0.224" rpy="0 -0 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <parent link="rv7frl_base" />
         <child link="rv7frl_shoulder" />
     </joint>
     <joint name="rv7frl_joint_2" type="revolute">
         <axis xyz="0 1 0" />
         <limit lower="-1.919862" upper="2.268928" effort="1" velocity="5.602507" />
-        <origin xyz="0 0.106 0.176" rpy="0 -0 0" />
+        <origin xyz="0 0 0.4" rpy="0 0 0" />
         <parent link="rv7frl_shoulder" />
         <child link="rv7frl_upper_arm" />
     </joint>
     <joint name="rv7frl_joint_3" type="revolute">
         <axis xyz="0 1 0" />
         <limit lower="0.000000" upper="2.827433" effort="1" velocity="6.283185" />
-        <origin xyz="0 -0.057 0.435" rpy="0 -0 0" />
+        <origin xyz="0 0 0.435" rpy="0 0 0" />
         <parent link="rv7frl_upper_arm" />
         <child link="rv7frl_elbow" />
     </joint>
     <joint name="rv7frl_joint_4" type="revolute">
         <axis xyz="0 0 1" />
         <limit lower="-3.490659" upper="3.490659" effort="1" velocity="5.881760" />
-        <origin xyz="-0.05 -0.049 0.1" rpy="0 -0 0" />
+        <origin xyz="-0.05 0 0" rpy="0 0 0" />
         <parent link="rv7frl_elbow" />
         <child link="rv7frl_forearm" />
     </joint>
     <joint name="rv7frl_joint_5" type="revolute">
         <axis xyz="0 1 0" />
         <limit lower="-2.094395" upper="2.094395" effort="1" velocity="7.853981" />
-        <origin xyz="0 -0.021 0.37" rpy="0 -0 0" />
+        <origin xyz="0 0 0.47" rpy="0 0 0" />
         <parent link="rv7frl_forearm" />
         <child link="rv7frl_wrist" />
     </joint>
     <joint name="rv7frl_joint_6" type="revolute">
         <axis xyz="0 0 1" />
         <limit lower="-6.283185" upper="6.283185" effort="1" velocity="12.566371" />
-        <origin xyz="0 0.021 0.085" rpy="0 -0 0" />
+        <origin xyz="0 0 0.085" rpy="0 0 0" />
         <parent link="rv7frl_wrist" />
         <child link="rv7frl_hand_flange" />
     </joint>
@@ -61,13 +61,13 @@
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/base.STL" />
             </geometry>
-            <origin rpy="0.00 0.00 0" xyz="0.00 0.00 0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
         </visual>
         <collision>
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/base.STL" />
             </geometry>
-            <origin rpy="0.00 0.00 0" xyz="0.00 0.00 0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
         </collision>
     </link>
     <link name="rv7frl_default_tcp" />
@@ -77,13 +77,13 @@
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/elbow.STL" />
             </geometry>
-            <origin rpy="0.00 0.00 3.14159265359" xyz="0.00 -0.049 0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
         </visual>
         <collision>
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/elbow.STL" />
             </geometry>
-            <origin rpy="0.00 0.00 3.14159265359" xyz="0.00 -0.049 0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
         </collision>
     </link>
     <link name="rv7frl_forearm">
@@ -92,13 +92,13 @@
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/forearm.STL" />
             </geometry>
-            <origin rpy="0.00 0.00 0" xyz="0.00 0.00 -0.004"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
         </visual>
         <collision>
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/forearm.STL" />
             </geometry>
-            <origin rpy="0.00 0.00 0" xyz="0.00 0.00 -0.004"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
         </collision>
     </link>
     <link name="rv7frl_hand_flange">
@@ -107,13 +107,13 @@
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/hand_flange.STL" />
             </geometry>
-            <origin rpy="0.00 0.00 0" xyz="0.00 0.00 -0.006"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
         </visual>
         <collision>
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/hand_flange.STL" />
             </geometry>
-            <origin rpy="0.00 0.00 0" xyz="0.00 0.00 -0.006"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
         </collision>
     </link>
     <link name="rv7frl_shoulder">
@@ -122,13 +122,13 @@
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/shoulder.STL" />
             </geometry>
-            <origin rpy="0.00 0.00 0" xyz="0.00 0.00 0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
         </visual>
         <collision>
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/shoulder.STL" />
             </geometry>
-            <origin rpy="0.00 0.00 0" xyz="0.00 0.00 0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
         </collision>
     </link>
     <link name="rv7frl_upper_arm">
@@ -137,13 +137,13 @@
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/upper_arm.STL" />
             </geometry>
-            <origin rpy="0.00 0.00 0" xyz="0.00 -0.106 0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
         </visual>
         <collision>
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/upper_arm.STL" />
             </geometry>
-            <origin rpy="0.00 0.00 0" xyz="0.00 -0.106 0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
         </collision>
     </link>
     <link name="rv7frl_wrist">
@@ -152,13 +152,13 @@
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/wrist.STL" />
             </geometry>
-            <origin rpy="0.00 0.00 0" xyz="0.00 0.021 0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
         </visual>
         <collision>
             <geometry>
                 <mesh filename="package://melfa_description/meshes/rv7frl/wrist.STL" />
             </geometry>
-            <origin rpy="0.00 0.00 0" xyz="0.00 0.021 0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
         </collision>
     </link>
     <link name="world" />
