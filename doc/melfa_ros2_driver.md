@@ -40,7 +40,7 @@ rosdep update
 
 ```
 cd ~/melfa_ws
-rosdep install -r --from-paths . --ignore-src --rosdistro humble -y
+rosdep install -r --from-paths . --ignore-src --rosdistro humble -y --skip-keys warehouse_ros_mongo
 ```
 
 4. Build the packages
@@ -69,7 +69,7 @@ ros2 launch melfa_description view_rv7frl.launch.py
 
 </br>
 
-## __3. Lanching the robot with Moveit__
+## __3. Lanching the robot with MoveIt__
 
 1. Launch robot arm in Rviz2 simulation (the controller_type and robot_ip values do not affect simulation outcomes) [Terminal 1]
 
@@ -296,12 +296,12 @@ ros2 service call /gpio_controller/configure_mode melfa_msgs/srv/ModeConfigure "
 
 Note: The above command disables any read or write operation for the plc_link_io_interface. To enable again, repeat the service call with plc_link_io_interface as "true"
 
-## __5. Trying Moveit Servo__
+## __5. Trying MoveIt Servo__
 
 Launch robot driver simulation or real robot [Terminal 1]
 
 ```
-ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=false controller_type:=R robot_ip:=192.168.3.100 launch_servo:=true
+ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=false controller_type:="R" robot_ip:=192.168.3.100 launch_servo:=true
 ```
 
 Launch moveit config [Terminal 2]

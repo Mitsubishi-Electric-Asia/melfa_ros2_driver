@@ -24,7 +24,7 @@ This section will guide you to find your local IP address on your Windows10 devi
 
 </br>
 
-2. Select your network adapter that you wish to connect to your ROS2 computer. Select __Properties__ &rArr; __Internet Protocol Version 4 (TCP/IPv4)__. In the popup window, you can change your IP to your prefered IP address in your local network. Take note of the IP address you have chosen as you will need to input the same IP address into RT Toolbox3.
+2. Select your network adapter that you wish to connect to your ROS2 computer. Select __Properties__ &rArr; __Internet Protocol Version 4 (TCP/IPv4)__. In the popup window, you can change your IP to your prefered IP address in your local network.
 
 </br>
 
@@ -81,7 +81,7 @@ ping 192.168.3.150
 ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=false controller_type:="R" robot_ip:=192.168.3.100
 ~~~
 
- To launch moveit servo use the following command instead
+ To launch MoveIt Servo use the following command instead
 
 ~~~
 ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=false controller_type:="R" robot_ip:=192.168.3.100 launch_servo:=true
@@ -92,7 +92,7 @@ ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=false cont
   <img src="./figures/rv7frl_bringup.png" width="1000" height="600">
 
 </br>
-2. To launch moveit. MELFA ROS2 moveit_config packages are natively compatible with OMPL, Pilz industrial planner, CHOMP and Moveit Servo.
+2. To launch MoveIt. MELFA ROS2 moveit_config packages are natively compatible with OMPL, Pilz industrial planner, CHOMP and Moveit Servo.
 
 ```
 ros2 launch melfa_rv7frl_moveit_config rv7frl_moveit.launch.py

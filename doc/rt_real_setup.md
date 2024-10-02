@@ -22,7 +22,7 @@ Sections:
 
 ## __1. Connecting via USB Cable__
 
-This is not the prefered way as it requires a USB cable with ferite core to ensure stable connection with the robot controller. If you know the IP address of the robot, please use the __Connect via Ethernet cable__ guide in the next section.
+This is not the preferred way as it requires a USB cable with a ferrite core to ensure stable connection with the robot controller. If you know the IP address of the robot, please use the __Connect via Ethernet cable__ guide in the next section.
 
 1. Ensure that RT Toolbox3 is __offline__. _Right click_ __RC1__ to open project options. Select __Edit Project__.
 
@@ -146,7 +146,7 @@ This section will guide you to find your local IP address on your Ubuntu 22.04LT
 
 </br>
 
-2. From your Linux computer, ping the robot's IP addresss. If ping is unsuccessful, verify your Linux and Robot IP addresses and try again.
+2. From your Linux computer, ping the robot's IP address. If ping is unsuccessful, verify your Linux and Robot IP addresses and try again.
 
 ~~~
 #ping <Robot local IP address>
@@ -168,7 +168,7 @@ ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=false cont
   <img src="./figures/rv7frl_bringup.png" width="1000" height="600">
 
 </br>
-1. Launch moveit. [Terminal 2]
+1. Launch MoveIt. [Terminal 2]
 
 ```
 ros2 launch melfa_rv7frl_moveit_config rv7frl_moveit.launch.py

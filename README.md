@@ -18,7 +18,7 @@ MELFA ROS2, co-developed with [ROS-Industrial Consortium Asia Pacific](https://r
 
 ## __2. MELFA ROS2 Feature__
 
-MELFA ROS2 consist of six main components: melfa_bringup, melfa_description, melfa_driver, melfa_io_controllers, melfa_msgs, various moveit_config packages.
+MELFA ROS2 consists of six main components: melfa_bringup, melfa_description, melfa_driver, melfa_io_controllers, melfa_msgs, various moveit_config packages.
 
 ### __melfa_bringup__
 
@@ -159,7 +159,7 @@ MELFA ROS2 is designed to interface CR800 robot controllers with the ROS2 so tha
 
 This section provides a brief introduction to naming conventions of MELFA robots. Below are images from our [robot catalog](https://dl.mitsubishielectric.com/dl/fa/document/catalog/robot/l(na)-09091eng/l09091m.pdf) describing the naming convention.
 
-For articulated robots (RV), it is fairly straigthforward as the variations that contribute to package differences are __Maximum load capacity__, __Series__ and __Arm length__. 
+For articulated robots (RV), it is fairly straightforward as the variations that contribute to package differences are __Maximum load capacity__, __Series__ and __Arm length__. 
 
 </br>
 
