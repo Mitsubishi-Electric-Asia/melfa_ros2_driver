@@ -69,7 +69,7 @@ ros2 launch melfa_description view_rv7frl.launch.py
 
 </br>
 
-## __3. Lanching the robot with MoveIt__
+## __3. Launching the robot with MoveIt__
 
 1. Launch robot arm in Rviz2 simulation (the controller_type and robot_ip values do not affect simulation outcomes) [Terminal 1]
 
