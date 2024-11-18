@@ -4,7 +4,7 @@
 
 This section will guide you to establish a UDP/IP connection between your ROS2 computer and _RT Toolbox3 simulator_. It is highly recommended to test your ROS2 applications on __RT Toolbox3 simulator__ before testing it on a real robot. This is helpful as __RT Toolbox3 simulator__ provides "near real" experience with 1-to-1 error conditions, velocity profiles and "close to actual" cycle times. _RT Toolbox3 simulator_ works with __Real Time Monitoring__<sup>1</sup> function which is useful for optimizing your ROS2 application.
 
-&#10146; <sup>1</sup> __Real Time Monitoring__ : found in [Ethernet Function Instruction Manual](https://dl.mitsubishielectric.co.jp/dl/fa/document/empf/manual/robot/bfp-a3379/bfpa3379g.empf) from [Robot Industrial/Collaborative Robot MELFA Manual](https://www.mitsubishielectric.co.jp/fa/download/search.do?mode=manual&kisyu=/robot). Provides real time data at control cycle intervals, 3.5ms for CR800-R/D and 7.11ms for CR800-Q.
+&#10146; <sup>1</sup> __Real Time Monitoring__ : found in [Ethernet Function Instruction Manual](https://www.mitsubishielectric.co.jp/fa/download/search.do?mode=manual&kisyu=/robot&q=Ethernet%20Function%20Instruction%20Manual&sort=0&style=0&lang=2&category1=0&filter_readme=0&filter_discontinued=0&filter_bundled=0) from [Robot Industrial/Collaborative Robot MELFA Manual](https://www.mitsubishielectric.co.jp/fa/download/search.do?mode=manual&kisyu=/robot). Provides real time data at control cycle intervals, 3.5ms for CR800-R/D and 7.11ms for CR800-Q.
 
 Sections:
 
@@ -24,7 +24,7 @@ This section will guide you to find your local IP address on your Windows10 devi
 
 </br>
 
-2. Select your network adapter that you wish to connect to your ROS2 computer. Select __Properties__ &rArr; __Internet Protocol Version 4 (TCP/IPv4)__. In the popup window, you can change your IP to your prefered IP address in your local network.
+2. Select your network adapter that you wish to connect to your ROS2 computer. Select __Properties__ &rArr; __Internet Protocol Version 4 (TCP/IPv4)__. In the popup window, you can change your IP to your preferred IP address in your local network.
 
 </br>
 

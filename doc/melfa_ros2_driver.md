@@ -7,18 +7,24 @@ MELFA ROS2 is designed to interface the CR800 robot controller with the ROS2 so 
 
 ## __1. Installation__
 
-This manual is for <u>__ROS2 Humble__</u> using [__rtexc api version 1.0__](). For more information regarding __rtexc api__ , please refer to [CR750/CR751 Series Controller, CR800 Series Controller Ethernet Function Instruction Manual](https://dl.mitsubishielectric.co.jp/dl/fa/document/empf/manual/robot/bfp-a3379/bfpa3379g.empf) from [Robot Industrial/Collaborative Robot MELFA Manual](https://www.mitsubishielectric.co.jp/fa/download/search.do?mode=manual&kisyu=/robot).
+This manual is for <u>__ROS2 Humble__</u> using __rtexc api version 1.0__. For more information regarding __rtexc api__ , please refer to [CR750/CR751 Series Controller, CR800 Series Controller Ethernet Function Instruction Manual](https://www.mitsubishielectric.co.jp/fa/download/search.do?mode=manual&kisyu=/robot&q=Ethernet%20Function%20Instruction%20Manual&sort=0&style=0&lang=2&category1=0&filter_readme=0&filter_discontinued=0&filter_bundled=0) from [Robot Industrial/Collaborative Robot MELFA Manual](https://www.mitsubishielectric.co.jp/fa/download/search.do?mode=manual&kisyu=/robot).
 
 ### __Build and Install__
 
-1. Clone or download MELFA ROS2 from the git repository into your working directory.
-
+1. Create your MELFA workspace
 ```
 mkdir -p ~/melfa_ws/src
 cd ~/melfa_ws/src
-git clone -b humble https://github.com/Mitsubishi-Electric-Asia/melfa_ros2_driver.git
 source /opt/ros/humble/setup.bash
 ```
+Download MELFA ROS2 Driver [Version 1.0.4](https://github.com/Mitsubishi-Electric-Asia/melfa_ros2_driver/archive/refs/tags/v1.0.4.zip) from the git repository and extract it into your working directory.
+
+Or you can clone the repository to get the latest experimental version
+```
+git clone -b humble https://github.com/Mitsubishi-Electric-Asia/melfa_ros2_driver.git
+```
+However, do note that only the release tag versions are stable and supported.
+
 
 2. Install moveit servo and chomp
 
