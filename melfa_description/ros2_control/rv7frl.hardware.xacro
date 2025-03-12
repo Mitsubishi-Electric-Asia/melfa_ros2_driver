@@ -53,6 +53,11 @@
                     <param name="max">4.188790</param>
                 </command_interface>
                 <state_interface name="position"/>
+                <xacro:if value="$(arg use_sim)">
+                    <state_interface name="position">
+                        <param name="initial_value">${initial_positions['rv_joint_1']}</param>
+                    </state_interface>
+                </xacro:if>
             </joint>
 
             <joint name="${prefix}rv7frl_joint_2">
@@ -62,6 +67,11 @@
                     <param name="max">2.268928</param>
                 </command_interface>
                 <state_interface name="position"/>
+                <xacro:if value="$(arg use_sim)">
+                    <state_interface name="position">
+                        <param name="initial_value">${initial_positions['rv_joint_2']}</param>
+                    </state_interface>
+                </xacro:if>
             </joint>
             <joint name="${prefix}rv7frl_joint_3">
                 <param name="initial_position">${initial_positions['rv_joint_3']}</param>
@@ -70,6 +80,11 @@
                     <param name="max">2.827433</param>
                 </command_interface>
                 <state_interface name="position"/>
+                <xacro:if value="$(arg use_sim)">
+                    <state_interface name="position">
+                        <param name="initial_value">${initial_positions['rv_joint_3']}</param>
+                    </state_interface>
+                </xacro:if>
             </joint>
             <joint name="${prefix}rv7frl_joint_4">
                 <param name="initial_position">${initial_positions['rv_joint_4']}</param>
@@ -78,6 +93,11 @@
                     <param name="max">3.490659</param>
                 </command_interface>
                 <state_interface name="position"/>
+                <xacro:if value="$(arg use_sim)">
+                    <state_interface name="position">
+                        <param name="initial_value">${initial_positions['rv_joint_4']}</param>
+                    </state_interface>
+                </xacro:if>
             </joint>
             <joint name="${prefix}rv7frl_joint_5">
                 <param name="initial_position">${initial_positions['rv_joint_5']}</param>
@@ -86,6 +106,11 @@
                     <param name="max">2.094395</param>
                 </command_interface>
                 <state_interface name="position"/>
+                <xacro:if value="$(arg use_sim)">
+                    <state_interface name="position">
+                        <param name="initial_value">${initial_positions['rv_joint_5']}</param>
+                    </state_interface>
+                </xacro:if>
             </joint>
             <joint name="${prefix}rv7frl_joint_6">
                 <param name="initial_position">${initial_positions['rv_joint_6']}</param>
@@ -94,6 +119,11 @@
                     <param name="max">6.283185</param>
                 </command_interface>
                 <state_interface name="position"/>
+                <xacro:if value="$(arg use_sim)">
+                    <state_interface name="position">
+                        <param name="initial_value">${initial_positions['rv_joint_6']}</param>
+                    </state_interface>
+                </xacro:if>
             </joint>
 
 

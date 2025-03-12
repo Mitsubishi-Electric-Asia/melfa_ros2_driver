@@ -361,6 +361,10 @@ Launch Gazebo-Fortress with the following command
 ```
 ros2 launch melfa_bringup rv7frl_control.launch.py use_sim:=true controller_type:="R" 
 ```
+Launch Moveit2 with the following command
+```
+ros2 launch melfa_rv7frl_moveit_config rv7frl_moveit.launch.py use_sim_time:=true
+```
 
 ### Other guides:
 - [Home page](./../README.md)
