@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>melfa_driver</name>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
   <description>ROS2 driver for MELFA Robot</description>
   <maintainer email="Muyao.Liu@asia.meap.com">Liu Muyao</maintainer>
   <license>Apache License 2.0</license>
