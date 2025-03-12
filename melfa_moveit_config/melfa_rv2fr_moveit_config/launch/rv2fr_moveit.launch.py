@@ -1,3 +1,18 @@
+#    COPYRIGHT (C) 2024 Mitsubishi Electric Corporation
+
+#    Licensed under the Apache License, Version 2.0 (the "License");
+#    you may not use this file except in compliance with the License.
+#    You may obtain a copy of the License at
+
+#        http://www.apache.org/licenses/LICENSE-2.0
+
+#    Unless required by applicable law or agreed to in writing, software
+#    distributed under the License is distributed on an "AS IS" BASIS,
+#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#    See the License for the specific language governing permissions and
+#    limitations under the License.
+
+import os
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, RegisterEventHandler, ExecuteProcess
 from launch.conditions import IfCondition
@@ -35,10 +50,31 @@ def generate_launch_description():
             "db", default_value="False", description="Database flag"
         )
     )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+                "warehouse_sqlite_path",
+                default_value=os.path.expanduser("~/.ros/warehouse_ros.sqlite"),
+                description="Path where the warehouse database should be stored",
+        )
+    )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+                "use_sim_time",
+                default_value="false",
+                description="Using or not time from simulation",
+        )
+    )
 
     # Initialize Arguments
     start_rviz = LaunchConfiguration('start_rviz')
     moveit_config_package = LaunchConfiguration("moveit_config_package")
+    warehouse_sqlite_path = LaunchConfiguration("warehouse_sqlite_path")
+    use_sim_time = LaunchConfiguration("use_sim_time")
+
+    warehouse_ros_config = {
+        "warehouse_plugin": "warehouse_ros_sqlite::DatabaseConnection",
+        "warehouse_host": warehouse_sqlite_path,
+    }
 
     # Initialize Moveit Configuration
     moveit_config = (
@@ -61,7 +97,12 @@ def generate_launch_description():
         package="moveit_ros_move_group",
         executable="move_group",
         output="screen",
-        parameters=[moveit_config.to_dict()],
+        parameters=[moveit_config.to_dict(),
+                    warehouse_ros_config,
+                    {
+                "use_sim_time": use_sim_time,
+                 },
+                ],
         arguments=["--ros-args", "--log-level", "info"],
     )
 
@@ -81,6 +122,10 @@ def generate_launch_description():
             moveit_config.robot_description_semantic,
             moveit_config.planning_pipelines,
             moveit_config.robot_description_kinematics,
+            warehouse_ros_config,
+            {
+                "use_sim_time": use_sim_time,
+            },
         ],
     )
 
