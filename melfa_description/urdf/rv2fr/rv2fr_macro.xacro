@@ -49,7 +49,7 @@
             <parent link="${prefix}rv2fr_upper_arm"/>
             <child link="${prefix}rv2fr_elbow"/>
             <axis xyz="0 1 0"/>
-            <limit lower="0.0" upper="2.792526803190927" effort="500" velocity="5.235987755982989"/>
+            <limit lower="0.0" upper="2.792526803190927" effort="50" velocity="5.235987755982989"/>
             <dynamics damping="1.0" friction="1.0"/>
         </joint>
         <joint name="${prefix}rv2fr_joint_4" type="revolute">
