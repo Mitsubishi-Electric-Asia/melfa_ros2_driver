@@ -147,6 +147,7 @@ MELFA ROS2 Driver consists of six main components: melfa_bringup, melfa_descript
 
 &#10146; <sup>4</sup>  __MXT__ is the command to enable __real time external control__.
 
+
 >Note1: You can download the [CR750/CR751 Series Controller, CR800 Series Controller Ethernet Function Instruction Manual](https://www.mitsubishielectric.com/fa/download/search.page?mode=manual&kisyu=/robot&q=CR750%2FCR751%20Series%20Controller%2C%20CR800%20Series%20Controller%20Ethernet%20Function%20Instruction%20Manual&sort=0&style=0&lang=2&category1=0&filter_discontinued=0&filter_bundled=0) from [Robot Industrial/Collaborative Robot MELFA Manual](https://www.mitsubishielectric.com/fa/download/search.page?mode=manual&kisyu=/robot).</br>
 
 
