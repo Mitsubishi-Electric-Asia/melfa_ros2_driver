@@ -588,7 +588,6 @@ hardware_interface::return_type MELFAPositionHardwareInterface::read(const rclcp
     return hardware_interface::return_type::OK;
   }
 
-  }
   if (is_j8 == 1)
   {
     if (j8_linear == 1)
