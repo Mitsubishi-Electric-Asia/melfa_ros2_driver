@@ -318,7 +318,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             [FindPackageShare("ros_gz_sim"), "/launch/gz_sim.launch.py"]
         ),
-        launch_arguments={"gz_args": ["-r", "-v", "4", "empty.sdf"]}.items(),
+        launch_arguments={"gz_args":"-r-v 4 empty.sdf"}.items(),
         condition=IfCondition(use_sim),
     )
     # Make topics available in ROS2
