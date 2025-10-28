@@ -583,9 +583,6 @@ hardware_interface::return_type MELFAPositionHardwareInterface::read(const rclcp
     {
       joint_position_states_[6] = api_wrap_->fb_pack.jnt_EFB.j7;
     }
-    RCLCPP_WARN(rclcpp::get_logger("MELFAPositionHardwareInterface"), "WARN: Packet lost. %d",
-                api_wrap_->packet_recv_lost);
-    return hardware_interface::return_type::OK;
   }
 
   if (is_j8 == 1)
