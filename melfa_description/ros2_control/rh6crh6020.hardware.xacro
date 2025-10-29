@@ -95,7 +95,7 @@
                 <state_interface name="position"/>
                 <xacro:if value="$(arg use_sim)">
                     <state_interface name="position">
-                        <param name="initial_value">${initial_positions['rv_joint_4']}</param>
+                        <param name="initial_value">${initial_positions['rh_joint_4']}</param>
                     </state_interface>
                 </xacro:if>
             </joint>
