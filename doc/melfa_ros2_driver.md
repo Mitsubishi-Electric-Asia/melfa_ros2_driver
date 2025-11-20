@@ -109,7 +109,7 @@ ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=true contr
 
 </br>
 
-1. Launch MoveIt. [Terminal 2]
+2. Launch MoveIt. [Terminal 2]
 
 ```
 ros2 launch melfa_rv7frl_moveit_config rv7frl_moveit.launch.py
@@ -121,7 +121,39 @@ ros2 launch melfa_rv7frl_moveit_config rv7frl_moveit.launch.py
 
 </br>
 
-## __4. Examples of I/O operations using command line interface__
+## 4. Multi-robot example for ros2_control without MoveIt2
+
+1. Launch first robot with namespace
+```
+# Terminal 1
+ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=false controller_type:="R" robot_ip:=192.168.3.250 namespace:="/rc1" controller_manager_name:="/rc1/controller_manager" packet_lost_log:=0
+```
+2. Launch second robot with a different namespace. For simulator, the robots must be configured to use different network ports. For real robot, the robots should be different IPv4 addresses, so the default port can be used.
+```
+# Terminal 2
+ros2 launch melfa_bringup rv4fr_control.launch.py use_fake_hardware:=false controller_type:="R" robot_ip:=192.168.3.250 namespace:="/rc2" controller_manager_name:="/rc2/controller_manager" packet_lost_log:=0 robot_port:=10100
+```
+3. Refer to the Rviz configuration below for reference.
+
+</br>
+
+  <img src="./figures/multi_robot_rviz.png" width="960" height="540">
+
+</br>
+
+4. Launch the test program. Ensure that the robots are NOT close to each other before running the test program.
+```
+# Terminal 3
+ros2 launch melfa_bringup test_joint_trajectory_controller.launch.py test_file:="test_file_1.yaml"
+
+```
+```
+# Terminal 4
+ros2 launch melfa_bringup test_joint_trajectory_controller.launch.py test_file:="test_file_2.yaml"
+
+```
+
+## __5. Examples of I/O operations using command line interface__
 
 This section will guide you through a simple demo of melfa_io_controllers using RT Toolbox3 simulator
 
@@ -302,7 +334,7 @@ ros2 service call /gpio_controller/configure_mode melfa_msgs/srv/ModeConfigure "
 
 Note: The above command disables any read or write operation for the plc_link_io_interface. To enable again, repeat the service call with plc_link_io_interface as "true"
 
-## __5. Launch MoveIt Servo__
+## __6. Launch MoveIt Servo__
 
 Launch robot driver simulation or real robot [Terminal 1]
 
@@ -322,7 +354,7 @@ Launch Servo Keyboard Input [Terminal 3]
 ros2 run melfa_rv7frl_moveit_config servo_keyboard_input
 ```
 
-## 6. Gazebo Fortress
+## 7. Gazebo Fortress
 
 Some modifications are required for Gazebo-Fortress to launch correctly.
 

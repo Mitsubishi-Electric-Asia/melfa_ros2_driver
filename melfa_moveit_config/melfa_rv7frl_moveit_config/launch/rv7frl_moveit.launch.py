@@ -31,12 +31,19 @@ def generate_launch_description():
 
     declared_arguments.append(
         DeclareLaunchArgument(
+            "namespace",
+            default_value="",
+            description="Namespace of controller manager and controllers. This is useful for \
+        multi-robot scenarios.",
+        )
+    )
+    declared_arguments.append(
+        DeclareLaunchArgument(
             'start_rviz',
             default_value='true',
             description='Start RViz2 automatically with this launch file.',
         )
     )
-
     declared_arguments.append(
         DeclareLaunchArgument(
             "moveit_config_package",
@@ -67,6 +74,7 @@ def generate_launch_description():
 
     # Initialize Arguments
     start_rviz = LaunchConfiguration('start_rviz')
+    namespace = LaunchConfiguration("namespace")
     moveit_config_package = LaunchConfiguration("moveit_config_package")
     warehouse_sqlite_path = LaunchConfiguration("warehouse_sqlite_path")
     use_sim_time = LaunchConfiguration("use_sim_time")
@@ -96,6 +104,7 @@ def generate_launch_description():
     move_group_node = Node(
         package="moveit_ros_move_group",
         executable="move_group",
+        namespace=namespace,
         output="screen",
         parameters=[moveit_config.to_dict(),
                     warehouse_ros_config,
@@ -114,6 +123,7 @@ def generate_launch_description():
         package="rviz2",
         condition=IfCondition(start_rviz),
         executable="rviz2",
+        namespace=namespace,
         name="rviz2_moveit",
         output="log",
         arguments=["-d", rviz_config_file],
@@ -134,6 +144,7 @@ def generate_launch_description():
     mongodb_server_node = Node(
         package="warehouse_ros_mongo",
         executable="mongo_wrapper_ros.py",
+        namespace=namespace,
         parameters=[
             {"warehouse_port": 33829},
             {"warehouse_host": "localhost"},
@@ -157,6 +168,7 @@ def generate_launch_description():
     servo_node = Node(
         package="moveit_servo",
         executable="servo_node_main",
+        namespace=namespace,
         parameters=[
             servo_params,
             moveit_config.robot_description,

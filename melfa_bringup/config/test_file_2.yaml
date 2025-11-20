@@ -1,0 +1,33 @@
+publisher_joint_trajectory_controller:
+  ros__parameters:
+
+    controller_name: "rc2/rv4fr_controller"
+    wait_sec_between_publish: 6
+
+    goal_names: ["pos1", "pos2","pos3","pos4"]
+
+    pos1: 
+      positions: [0.5, 1.5, 1.0, 0.5, 0.5, 0.5]
+    pos2: 
+      positions: [0.0, 0.0, 1.5707, 0.0, 1.5707, 0.0]
+    pos3: 
+      positions: [-0.5, 0.0, 1.7, 1.57, -0.785, 0.0]
+    pos4: 
+      positions: [1.0, 1.0, 0.1, 0.0, 1.0, 0.0]
+
+    joints:
+      - rv4fr_joint_1
+      - rv4fr_joint_2
+      - rv4fr_joint_3
+      - rv4fr_joint_4
+      - rv4fr_joint_5
+      - rv4fr_joint_6
+
+    check_starting_point: false
+    starting_point_limits:
+      rv4fr_joint_1: [-3.0,3.0] 
+      rv4fr_joint_2: [-1.6,1.6]
+      rv4fr_joint_3: [-1.6,1.6]
+      rv4fr_joint_4: [-3.0,3.0]
+      rv4fr_joint_5: [-1.6,1.6]
+      rv4fr_joint_6: [-1.6,1.6]

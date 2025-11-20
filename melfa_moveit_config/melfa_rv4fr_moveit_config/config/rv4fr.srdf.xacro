@@ -3,6 +3,6 @@
 
   <xacro:include filename="$(find melfa_rv4fr_moveit_config)/config/rv4fr_macro.srdf.xacro"/>
 
-  <xacro:RV-7FRL />
+  <xacro:rv4fr />
 
 </robot>

@@ -31,6 +31,14 @@ def generate_launch_description():
     declared_arguments = []
     declared_arguments.append(
         DeclareLaunchArgument(
+            "namespace",
+            default_value="",
+            description="Namespace of controller manager and controllers. This is useful for \
+        multi-robot scenarios.",
+        )
+    )
+    declared_arguments.append(
+        DeclareLaunchArgument(
             'runtime_config_package',
             default_value='melfa_description',
             description='Package with the controller\'s configuration in "config" folder. \
@@ -80,6 +88,14 @@ def generate_launch_description():
             'use_fake_hardware',
             default_value='true',
             description='Start robot with fake hardware mirroring command to its states.',
+        )
+    )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "controller_manager_name",
+            default_value="/controller_manager",
+            description="Full name of the controller manager. This values should be set if \
+        controller manager is used under a namespace.",
         )
     )
     declared_arguments.append(
@@ -147,6 +163,7 @@ def generate_launch_description():
     )
     
     # Initialize Arguments
+    namespace = LaunchConfiguration("namespace")
     runtime_config_package = LaunchConfiguration('runtime_config_package')
     controllers_file = LaunchConfiguration('controllers_file')
     description_package = LaunchConfiguration('description_package')
@@ -154,6 +171,7 @@ def generate_launch_description():
     prefix = LaunchConfiguration('prefix')
     use_sim = LaunchConfiguration('use_sim')
     use_fake_hardware = LaunchConfiguration('use_fake_hardware')
+    controller_manager_name = LaunchConfiguration("controller_manager_name")
     robot_controller = LaunchConfiguration('robot_controller')
     start_rviz = LaunchConfiguration('start_rviz')
     robot_ip = LaunchConfiguration('robot_ip')
@@ -232,7 +250,8 @@ def generate_launch_description():
     control_node = Node(
         package='controller_manager',
         executable='ros2_control_node',
-        parameters=[ParameterFile(robot_controllers, allow_substs=True)],
+        namespace=namespace,
+        parameters=[robot_description, ParameterFile(robot_controllers, allow_substs=True)],
         remappings=[("~/robot_description", "robot_description"),],
         output={
             'stdout': 'screen',
@@ -245,6 +264,7 @@ def generate_launch_description():
     robot_state_pub_node = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
+        namespace=namespace,
         output='both',
         parameters=[robot_description],
     )
@@ -252,6 +272,7 @@ def generate_launch_description():
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
+        namespace=namespace,
         name='rviz2',
         output='log',
         arguments=['-d', rviz_config_file],
@@ -261,26 +282,30 @@ def generate_launch_description():
     joint_state_broadcaster_spawner = Node(
         package='controller_manager',
         executable='spawner',
-        arguments=['joint_state_broadcaster', '--controller-manager', '/controller_manager'],
+        namespace=namespace,
+        arguments=['joint_state_broadcaster', '--controller-manager', controller_manager_name],
     )
 
     robot_controller_spawner = Node(
         package='controller_manager',
         executable='spawner',
-        arguments=[robot_controller, '-c', '/controller_manager'],
+        namespace=namespace,
+        arguments=[robot_controller, '-c', controller_manager_name],
     )
 
     gpio_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["gpio_controller", "-c", "/controller_manager"],
+        namespace=namespace,
+        arguments=["gpio_controller", "-c", controller_manager_name],
         condition=UnlessCondition(use_fake_hardware) or UnlessCondition(use_sim),
     )
 
     forward_position_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["forward_position_controller", "--controller-manager", "/controller_manager","--inactive"],
+        namespace=namespace,
+        arguments=["forward_position_controller", "--controller-manager", controller_manager_name,"--inactive"],
     )
 
     forward_controller_event_handler = RegisterEventHandler(

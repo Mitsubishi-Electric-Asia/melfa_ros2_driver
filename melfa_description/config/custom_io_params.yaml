@@ -45,5 +45,5 @@ controller_limits:
     misc3_io_limits: 12048, 14095
 
 control_mode_io:
-  io_mode: 1111111
+  io_mode: "1111111"
 

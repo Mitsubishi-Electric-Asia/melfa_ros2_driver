@@ -20,12 +20,25 @@ from launch import LaunchDescription
 from launch.substitutions import PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
+from launch.substitutions import LaunchConfiguration
+from launch.actions import DeclareLaunchArgument
+
 
 
 def generate_launch_description():
+    declared_arguments = []
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "test_file",
+            default_value="",
+            description="Namespace of controller manager and controllers. This is useful for \
+        multi-robot scenarios.",
+        )
+    )
+    test_file = LaunchConfiguration("test_file")
 
     position_goals = PathJoinSubstitution(
-        [FindPackageShare("melfa_bringup"), "config", "test_goal_publishers_config.yaml"]
+        [FindPackageShare("melfa_bringup"), "config", test_file]
     )
 
     return LaunchDescription(

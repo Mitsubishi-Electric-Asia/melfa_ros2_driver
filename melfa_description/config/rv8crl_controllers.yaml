@@ -12,7 +12,7 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
-controller_manager:
+/**/controller_manager:
   ros__parameters:
     update_rate: 286  #Hz
 
@@ -28,7 +28,7 @@ controller_manager:
     forward_position_controller:
       type: forward_command_controller/ForwardCommandController
 
-rv8crl_controller:
+/**/rv8crl_controller:
   ros__parameters:
     command_interfaces:
       - position
@@ -51,100 +51,100 @@ rv8crl_controller:
     state_publish_rate: 286.0 # Defaults to 50
     action_monitor_rate: 20.0 # Defaults to 20
 
-gpio_controller:
+/**/gpio_controller:
   ros__parameters:
     hand_io_state_interfaces:
-      - $(var prefix)hand_io/bit_id
-      - $(var prefix)hand_io/bit_mask
-      - $(var prefix)hand_io/bit_send_type
-      - $(var prefix)hand_io/input_data
-      - $(var prefix)hand_io/output_data
+      - hand_io/bit_id
+      - hand_io/bit_mask
+      - hand_io/bit_send_type
+      - hand_io/input_data
+      - hand_io/output_data
     plc_link_io_state_interfaces:
-      - $(var prefix)plc_link_io/bit_id
-      - $(var prefix)plc_link_io/bit_mask
-      - $(var prefix)plc_link_io/bit_send_type
-      - $(var prefix)plc_link_io/input_data
-      - $(var prefix)plc_link_io/output_data
+      - plc_link_io/bit_id
+      - plc_link_io/bit_mask
+      - plc_link_io/bit_send_type
+      - plc_link_io/input_data
+      - plc_link_io/output_data
     safety_io_state_interfaces:
-      - $(var prefix)safety_io/bit_id
-      - $(var prefix)safety_io/bit_mask
-      - $(var prefix)safety_io/bit_send_type
-      - $(var prefix)safety_io/input_data
-      - $(var prefix)safety_io/output_data
+      - safety_io/bit_id
+      - safety_io/bit_mask
+      - safety_io/bit_send_type
+      - safety_io/input_data
+      - safety_io/output_data
     io_unit_state_interfaces:
-      - $(var prefix)io_unit/bit_id
-      - $(var prefix)io_unit/bit_mask
-      - $(var prefix)io_unit/bit_send_type
-      - $(var prefix)io_unit/input_data
-      - $(var prefix)io_unit/output_data
+      - io_unit/bit_id
+      - io_unit/bit_mask
+      - io_unit/bit_send_type
+      - io_unit/input_data
+      - io_unit/output_data
     misc1_io_state_interfaces:
-      - $(var prefix)misc1_io/bit_id
-      - $(var prefix)misc1_io/bit_mask
-      - $(var prefix)misc1_io/bit_send_type
-      - $(var prefix)misc1_io/input_data
-      - $(var prefix)misc1_io/output_data
+      - misc1_io/bit_id
+      - misc1_io/bit_mask
+      - misc1_io/bit_send_type
+      - misc1_io/input_data
+      - misc1_io/output_data
     misc2_io_state_interfaces:
-      - $(var prefix)misc2_io/bit_id
-      - $(var prefix)misc2_io/bit_mask
-      - $(var prefix)misc2_io/bit_send_type
-      - $(var prefix)misc2_io/input_data
-      - $(var prefix)misc2_io/output_data
+      - misc2_io/bit_id
+      - misc2_io/bit_mask
+      - misc2_io/bit_send_type
+      - misc2_io/input_data
+      - misc2_io/output_data
     misc3_io_state_interfaces:
-      - $(var prefix)misc3_io/bit_id
-      - $(var prefix)misc3_io/bit_mask
-      - $(var prefix)misc3_io/bit_send_type
-      - $(var prefix)misc3_io/input_data
-      - $(var prefix)misc3_io/output_data
+      - misc3_io/bit_id
+      - misc3_io/bit_mask
+      - misc3_io/bit_send_type
+      - misc3_io/input_data
+      - misc3_io/output_data
     misc_io_state_interfaces:
-      - $(var prefix)io_control_mode/io_mode
-      - $(var prefix)ctrl/ctrl_type
+      - io_control_mode/io_mode
+      - ctrl/ctrl_type
     hand_io_command_interfaces:
-      - $(var prefix)hand_io/bit_id
-      - $(var prefix)hand_io/bit_mask
-      - $(var prefix)hand_io/bit_recv_type
-      - $(var prefix)hand_io/bit_send_type
-      - $(var prefix)hand_io/output_data
+      - hand_io/bit_id
+      - hand_io/bit_mask
+      - hand_io/bit_recv_type
+      - hand_io/bit_send_type
+      - hand_io/output_data
     plc_link_io_command_interfaces:
-      - $(var prefix)plc_link_io/bit_id
-      - $(var prefix)plc_link_io/bit_mask
-      - $(var prefix)plc_link_io/bit_recv_type
-      - $(var prefix)plc_link_io/bit_send_type
-      - $(var prefix)plc_link_io/output_data
+      - plc_link_io/bit_id
+      - plc_link_io/bit_mask
+      - plc_link_io/bit_recv_type
+      - plc_link_io/bit_send_type
+      - plc_link_io/output_data
     safety_io_command_interfaces:
-      - $(var prefix)safety_io/bit_id
-      - $(var prefix)safety_io/bit_mask
-      - $(var prefix)safety_io/bit_recv_type
-      - $(var prefix)safety_io/bit_send_type
-      - $(var prefix)safety_io/output_data
+      - safety_io/bit_id
+      - safety_io/bit_mask
+      - safety_io/bit_recv_type
+      - safety_io/bit_send_type
+      - safety_io/output_data
     io_unit_command_interfaces:
-      - $(var prefix)io_unit/bit_id
-      - $(var prefix)io_unit/bit_mask
-      - $(var prefix)io_unit/bit_recv_type
-      - $(var prefix)io_unit/bit_send_type
-      - $(var prefix)io_unit/output_data
+      - io_unit/bit_id
+      - io_unit/bit_mask
+      - io_unit/bit_recv_type
+      - io_unit/bit_send_type
+      - io_unit/output_data
     misc1_io_command_interfaces:
-      - $(var prefix)misc1_io/bit_id
-      - $(var prefix)misc1_io/bit_mask
-      - $(var prefix)misc1_io/bit_recv_type
-      - $(var prefix)misc1_io/bit_send_type
-      - $(var prefix)misc1_io/output_data
+      - misc1_io/bit_id
+      - misc1_io/bit_mask
+      - misc1_io/bit_recv_type
+      - misc1_io/bit_send_type
+      - misc1_io/output_data
     misc2_io_command_interfaces:
-      - $(var prefix)misc2_io/bit_id
-      - $(var prefix)misc2_io/bit_mask
-      - $(var prefix)misc2_io/bit_recv_type
-      - $(var prefix)misc2_io/bit_send_type
-      - $(var prefix)misc2_io/output_data
+      - misc2_io/bit_id
+      - misc2_io/bit_mask
+      - misc2_io/bit_recv_type
+      - misc2_io/bit_send_type
+      - misc2_io/output_data
     misc3_io_command_interfaces:
-      - $(var prefix)misc3_io/bit_id
-      - $(var prefix)misc3_io/bit_mask
-      - $(var prefix)misc3_io/bit_recv_type
-      - $(var prefix)misc3_io/bit_send_type
-      - $(var prefix)misc3_io/output_data
+      - misc3_io/bit_id
+      - misc3_io/bit_mask
+      - misc3_io/bit_recv_type
+      - misc3_io/bit_send_type
+      - misc3_io/output_data
     misc_io_command_interfaces:
-      - $(var prefix)io_control_mode/io_mode
-      - $(var prefix)ctrl/ctrl_type
+      - io_control_mode/io_mode
+      - ctrl/ctrl_type
 
-forward_position_controller:
+/**/forward_position_controller:
   ros__parameters:
     joints:
       - $(var prefix)rv8crl_joint_1
