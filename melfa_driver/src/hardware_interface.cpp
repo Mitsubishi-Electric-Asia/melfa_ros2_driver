@@ -22,9 +22,9 @@ std::vector<uint16_t> MELFAPositionHardwareInterface::readIOLimits(const std::st
   /**
    * @brief Reads configured IO Limit parameters
    *
-   * This function reads the IO limit strings from hardware parmater and generates it as a vector
+   * This function reads the IO limit strings from hardware parameters and generates it as a vector
    *
-   * @param limit_string A string with IO limits seperated by delimiter (,)
+   * @param limit_string A string with IO limits separated by delimiter (,)
    * @return The delimited values as a vector
    *
    * @note The function can delimit and vectorize any number of values
@@ -44,7 +44,7 @@ std::vector<uint16_t> MELFAPositionHardwareInterface::readIOLimits(const std::st
 void MELFAPositionHardwareInterface::setIO(const std::vector<double>& io_commands, bool read_only = false)
 {
   /**
-   * @brief Sets IO paramters for the Melfa API
+   * @brief Sets IO parameters for the Melfa API
    *
    * This function sets required IO parameters for the command packet sent to the API
    *
@@ -89,7 +89,7 @@ MELFAPositionHardwareInterface::on_init(const hardware_interface::HardwareInfo& 
   info_ = system_info;
   execution_init_ = true;
 
-  // Reading IO limits from harware info structure for specific IO interfaces
+  // Reading IO limits from hardware info structure for specific IO interfaces
   hand_io_limits_ = readIOLimits(info_.hardware_parameters["hand_io_limits"]);
   plc_link_io_limits_ = readIOLimits(info_.hardware_parameters["plc_link_io_limits"]);
   safety_input_limits_ = readIOLimits(info_.hardware_parameters["safety_input_limits"]);
@@ -114,7 +114,7 @@ MELFAPositionHardwareInterface::on_init(const hardware_interface::HardwareInfo& 
   io_control_mode_name.insert(0,prefix_);
   ctrl_name.insert(0,prefix_);
 
-  // Joint position commmands and states initiailization
+  // Joint position commands and states initialization
   joint_position_commands_.resize(info_.joints.size(), std::numeric_limits<double>::quiet_NaN());
   joint_position_states_.resize(info_.joints.size(), std::numeric_limits<double>::quiet_NaN());
 
@@ -344,7 +344,7 @@ MELFAPositionHardwareInterface::on_activate(const rclcpp_lifecycle::State& previ
   misc3_io_commands_[3] = MXT_IO_NULL;
   misc3_io_commands_[4] = misc3_io_states_[4];
 
-  // Intialization of Controller type command
+  // Initialization of Controller type command
   if (controller_type_ == "R")
     ctrl_type_io_command_[0] = 1.0;
   if (controller_type_ == "Q")
@@ -366,7 +366,7 @@ MELFAPositionHardwareInterface::on_deactivate(const rclcpp_lifecycle::State& pre
   /**
    * @brief Deactivation method for MELFAPositionHardwareInterface class
    *
-   * This function sends stopping signal to the Melfa Controlller API
+   * This function sends stopping signal to the Melfa Controller API
    *
    * @param previous_state lifecycle state object representing state before current state
    * @returns CallbackReturn::SUCCESS if deactivation condition is met
@@ -396,10 +396,10 @@ std::vector<hardware_interface::StateInterface> MELFAPositionHardwareInterface::
   /**
    * @brief State Interfaces export method for MELFAPositionHardwareInterface class
    *
-   * This function exports available state interfaces to the relevant ROS2 controllers
+   * This function exports available state interfaces to the relevant ROS 2 controllers
    *
    * @returns state interfaces as vector
-   * @note addStateInterfaces function faciliates addition of different IO state interfaces
+   * @note addStateInterfaces function facilitates addition of different IO state interfaces
    *
    */
 
@@ -463,10 +463,10 @@ std::vector<hardware_interface::CommandInterface> MELFAPositionHardwareInterface
   /**
    * @brief Command Interfaces export method for MELFAPositionHardwareInterface class
    *
-   * This function exports available command interfaces to the relevant ROS2 controllers
+   * This function exports available command interfaces to the relevant ROS 2 controllers
    *
    * @returns command interfaces as vector
-   * @note addCommandInterfaces function faciliates addition of different IO command interfaces
+   * @note addCommandInterfaces function facilitates addition of different IO command interfaces
    *
    */
 
@@ -535,7 +535,7 @@ hardware_interface::return_type MELFAPositionHardwareInterface::read(const rclcp
    * @param time The time recorded at the beginning of the current iteration of the control loop
    * @param period The duration measured for the last iteration of the control loop.
    * @returns hardware_interface::return_type::OK after interfaces are read
-   * @note readIOFeedback function faciliates reading different IO state interfaces
+   * @note readIOFeedback function facilitates reading different IO state interfaces
    *
    */
 

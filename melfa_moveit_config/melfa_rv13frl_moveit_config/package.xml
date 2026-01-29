@@ -2,11 +2,11 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>melfa_rv13frl_moveit_config</name>
-  <version>1.1.0</version>
+  <version>1.1.1</version>
   <description>
      An automatically generated package with all the configuration and launch files for using the RV-13FRL with the MoveIt Motion Planning Framework
   </description>
-  <maintainer email="Muyao.Liu@asia.meap.com">Liu Muyao</maintainer>
+  <maintainer email="user@todo.todo">Liu Muyao</maintainer>
 
   <license>Apache License 2.0</license>
 
@@ -14,7 +14,7 @@
   <url type="bugtracker">https://github.com/ros-planning/moveit2/issues</url>
   <url type="repository">https://github.com/ros-planning/moveit2</url>
 
-  <author email="Muyao.Liu@asia.meap.com">Liu Muyao</author>
+  <author email="user@todo.todo">Liu Muyao</author>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

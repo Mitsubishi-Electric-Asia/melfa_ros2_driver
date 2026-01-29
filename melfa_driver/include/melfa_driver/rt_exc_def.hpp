@@ -350,7 +350,7 @@ typedef struct enet_rtcmd_str
         PULSE pls; // Pulse type [pulse]
     } dat;
     /**
-     * @brief Send input/output signal data designation. MXT_IO_OUT for output signal. MXT_IO_NULL for input signal. When used in MXTsend, designate signal type of data sent. When used in MXTrecv, indicate signal type of data recevied.
+     * @brief Send input/output signal data designation. MXT_IO_OUT for output signal. MXT_IO_NULL for input signal. When used in MXTsend, designate signal type of data sent. When used in MXTrecv, indicate signal type of data received.
      */
     uint16_t SendIOType;
     /**

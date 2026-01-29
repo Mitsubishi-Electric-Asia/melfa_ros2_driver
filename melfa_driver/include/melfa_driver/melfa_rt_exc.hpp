@@ -279,7 +279,7 @@ namespace MelfaEthernet
              */
             unsigned short port;
             /**
-             * @brief Generated. net_addr retutn value. IPv4 network address in internet standard dot notation.
+             * @brief Generated. net_addr return value. IPv4 network address in internet standard dot notation.
              *
              */
             int destAddr;
@@ -316,7 +316,7 @@ namespace MelfaEthernet
          */
         int counter_;
         /**
-         * @brief set robot controller clock cycle period. To calculate resolution for receving packets.
+         * @brief set robot controller clock cycle period. To calculate resolution for receiving packets.
          *
          */
         float period = 3.5;
@@ -346,7 +346,7 @@ namespace MelfaEthernet
          */
         FB_packet fb_pack;
         /**
-         * @brief Construct a rtexc::rtexc object. Initialize class variabes. If _WIN32, initialize WSAStartup. If debug, prints "Debug mode active."
+         * @brief Construct a rtexc::rtexc object. Initialize class variables. If _WIN32, initialize WSAStartup. If debug, prints "Debug mode active."
          *
          */
         rtexc(float custom_cycle_time = 3.5);

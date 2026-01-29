@@ -3,9 +3,9 @@
 ### Other guides:
 - [Home page](./../README.md)
 - [MELFA ROS2 user guide](./melfa_ros2_driver.md) : Usage and Installation of MELFA ROS2.
-- [RT Toolbox3 Setup](./rt_toolbox3_setup.md) : Create your first RT Toolbox3 Project File for ROS2.
-- [RT Toolbox3 Simulator Setup](./rt_sim_setup.md) : Connect to RT Toolbox3 simulator as if it is a real robot.
-- [RT Toolbox3 Real Robot Setup](./rt_real_setup.md): Connect to a MELFA robot.
+- [RT ToolBox3 Setup](./rt_toolbox3_setup.md) : Create your first RT ToolBox3 Project File for ROS 2.
+- [RT ToolBox3 Simulator Setup](./rt_sim_setup.md) : Connect to RT ToolBox3 simulator as if it is a real robot.
+- [RT ToolBox3 Real Robot Setup](./rt_real_setup.md): Connect to a MELFA robot.
   
 # Packages in the Repository
 - melfa_bringup: provides launch files for robot bringup
@@ -13,7 +13,7 @@
 - melfa_driver: provides driver/hardware interface for communication with MELFA robots
 - melfa_io_controllers: provides ROS2 controllers for GPIO control
 - melfa_moveit_config: provides example MoveIt config and launch files for MELFA robots
-- melfa_msgs: provides ROS2 msgs for MELFA robots
+- melfa_msgs: provides ROS 2 msgs for MELFA robots
 
 # Build
 1. Clone this repository

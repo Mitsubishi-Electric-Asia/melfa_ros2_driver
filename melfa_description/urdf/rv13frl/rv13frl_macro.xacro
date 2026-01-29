@@ -11,7 +11,7 @@
     </xacro:macro>
     <xacro:macro name="rv13frl" params="parent prefix *origin">
         <!-- Inertial parameters -->
-        <xacro:property name="base_mass" value="0.4" />  <!-- These mass are INCORRRECT -->
+        <xacro:property name="base_mass" value="0.4" />  <!-- These mass are INCORRECT -->
         <xacro:property name="shoulder_mass" value="0.37000" />
         <xacro:property name="upper_arm_mass" value="0.33930" />
         <xacro:property name="elbow_mass" value="0.22750" />

@@ -21,7 +21,7 @@ namespace melfa_io_controllers
     /**
      * @brief on_init method for MelfaGPIOController class
      *
-     * This method intiailizes the limits of the IO interfaces by reading from the IO limits YAML config file
+     * This method initializes the limits of the IO interfaces by reading from the IO limits YAML config file
      *
      * @returns CallbackReturn::SUCCESS if IO limits components are loading in YAML node
      * @returns CallbackReturn::ERROR if exception is raised
@@ -112,7 +112,7 @@ namespace melfa_io_controllers
      * @param time The time recorded at the beginning of the current iteration of the update loop
      * @param period The duration measured for the last iteration of the update loop
      * @returns Controller_interface::return_type::OK after update of the states
-     * @note updateGPIO function faciliates updating different IO interfaces current state
+     * @note updateGPIO function facilitates updating different IO interfaces current state
      *
      */
 

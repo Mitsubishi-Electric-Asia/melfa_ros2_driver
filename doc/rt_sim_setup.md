@@ -1,8 +1,8 @@
 <img src="./figures/MELFA_t.png" width="400" height="98"> <img src="./figures/ROS-AP-logo.png" width="208" height="98">
 
-# __Connecting to RT Toolbox3 Simulator__
+# __Connecting to RT ToolBox3 Simulator__
 
-This section will guide you to establish a UDP/IP connection between your ROS2 computer and _RT Toolbox3 simulator_. It is highly recommended to test your ROS2 applications on __RT Toolbox3 simulator__ before testing it on a real robot. This is helpful as __RT Toolbox3 simulator__ provides "near real" experience with 1-to-1 error conditions, velocity profiles and "close to actual" cycle times. _RT Toolbox3 simulator_ works with __Real Time Monitoring__<sup>1</sup> function which is useful for optimizing your ROS2 application.
+This section will guide you to establish a UDP/IP connection between your ROS 2 computer and _RT ToolBox3 simulator_. It is highly recommended to test your ROS 2 applications on __RT ToolBox3 simulator__ before testing it on a real robot. This is helpful as __RT ToolBox3 simulator__ provides "near real" experience with 1-to-1 error conditions, velocity profiles and "close to actual" cycle times. _RT ToolBox3 simulator_ works with __Real Time Monitoring__<sup>1</sup> function which is useful for optimizing your ROS 2 application.
 
 &#10146; <sup>1</sup> __Real Time Monitoring__ : found in [CR750/CR751 Series Controller, CR800 Series Controller Ethernet Function Instruction Manual](https://www.mitsubishielectric.com/fa/download/search.page?mode=manual&kisyu=/robot&q=CR750%2FCR751%20Series%20Controller%2C%20CR800%20Series%20Controller%20Ethernet%20Function%20Instruction%20Manual&sort=0&style=0&lang=2&category1=0&filter_discontinued=0&filter_bundled=0) from [Robot Industrial/Collaborative Robot MELFA Manual](https://www.mitsubishielectric.com/fa/download/search.page?mode=manual&kisyu=/robot). Provides real time data at control cycle intervals, 3.5ms for CR800-R/D and 7.11ms for CR800-Q.
 
@@ -10,7 +10,7 @@ Sections:
 
 1. __Verifying Local IP Address on Windows__
 2. __Verifying Local IP Address on Ubuntu 22.04LTS__
-3. __ROS2 Connection to Simulator__
+3. __ROS 2 Connection to Simulator__
 
 ## __1. Verify Local IP Address on Windows__
 
@@ -24,7 +24,7 @@ This section will guide you to find your local IP address on your Windows10 devi
 
 </br>
 
-2. Select your network adapter that you wish to connect to your ROS2 computer. Select __Properties__ &rArr; __Internet Protocol Version 4 (TCP/IPv4)__. In the popup window, you can change your IP to your preferred IP address in your local network.
+2. Select your network adapter that you wish to connect to your ROS 2 computer. Select __Properties__ &rArr; __Internet Protocol Version 4 (TCP/IPv4)__. In the popup window, you can change your IP to your preferred IP address in your local network.
 
 </br>
 
@@ -32,7 +32,7 @@ This section will guide you to find your local IP address on your Windows10 devi
 
 </br>
 
-3. Select __Simulator__ to launch __RT Toolbox3 simulator__.
+3. Select __Simulator__ to launch __RT ToolBox3 simulator__.
 
 </br>
 
@@ -82,9 +82,9 @@ This section will guide you to find your local IP address on your Ubuntu 22.04LT
 ping 192.168.3.150
 ~~~
 
-## __3. ROS2 Connection to Simulator__
+## __3. ROS 2 Connection to Simulator__
 
-1. Assuming that ping is successful, you are now ready to connect your RT Toolbox3 simulator as if it is a _real_ robot. For the purpose of this tutorial, run the following command in the terminal. This command will launch the bringup launch file for RV7FRL robot using the CR800-R robot controller.
+1. Assuming that ping is successful, you are now ready to connect your RT ToolBox3 simulator as if it is a _real_ robot. For the purpose of this tutorial, run the following command in the terminal. This command will launch the bringup launch file for RV7FRL robot using the CR800-R robot controller.
 
 The command argument "packet_lost_log:=0" turns off the warning message for packet losses. It is highly recommended to NOT turn it off when connecting to a real robot. However, connecting to a simulation is fine.
 
@@ -103,7 +103,7 @@ ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=false cont
   <img src="./figures/rv7frl_bringup.png" width="1000" height="600">
 
 </br>
-2. To launch MoveIt. MELFA ROS2 moveit_config packages are natively compatible with OMPL, Pilz industrial planner, CHOMP and Moveit Servo.
+2. To launch MoveIt. MELFA ROS2 moveit_config packages are natively compatible with OMPL, Pilz industrial planner, CHOMP and MoveIt Servo.
 
 ```
 ros2 launch melfa_rv7frl_moveit_config rv7frl_moveit.launch.py
@@ -118,6 +118,6 @@ ros2 launch melfa_rv7frl_moveit_config rv7frl_moveit.launch.py
 ### Other guides:
 - [Home page](./../README.md)
 - [MELFA ROS2 user guide](./melfa_ros2_driver.md) : Usage and Installation of MELFA ROS2.
-- [RT Toolbox3 Setup](./rt_toolbox3_setup.md) : Create your first RT Toolbox3 Project File for ROS2.
-- [RT Toolbox3 Simulator Setup](./rt_sim_setup.md) : Connect to RT Toolbox3 simulator as if it is a real robot.
-- [RT Toolbox3 Real Robot Setup](./rt_real_setup.md): Connect to a MELFA robot.
+- [RT ToolBox3 Setup](./rt_toolbox3_setup.md) : Create your first RT ToolBox3 Project File for ROS 2.
+- [RT ToolBox3 Simulator Setup](./rt_sim_setup.md) : Connect to RT ToolBox3 simulator as if it is a real robot.
+- [RT ToolBox3 Real Robot Setup](./rt_real_setup.md): Connect to a MELFA robot.

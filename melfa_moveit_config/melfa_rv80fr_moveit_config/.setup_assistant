@@ -6,7 +6,7 @@ moveit_setup_assistant_config:
     relative_path: config/rv80fr.srdf
   package_settings:
     author_name: Liu Muyao
-    author_email: Muyao.Liu@asia.meap.com
+    author_email: user@todo.todo
     generated_timestamp: 1740370153
   control_xacro:
     command:

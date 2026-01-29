@@ -3,11 +3,11 @@
 
 # __MELFA ROS2 Usage__
 
-MELFA ROS2 is designed to interface the CR800 robot controller with the ROS2 so that program developers and researchers can build and reuse their own programs to control the MELFA externally.
+MELFA ROS2 is designed to interface the CR800 robot controller with the ROS 2 so that program developers and researchers can build and reuse their own programs to control the MELFA externally.
 
 ## __1. Installation__
 
-This manual is for <u>__ROS2 Humble__</u> using __rtexc api version 1.0__. For more information regarding __rtexc api__ , please refer to [CR750/CR751 Series Controller, CR800 Series Controller Ethernet Function Instruction Manual](https://www.mitsubishielectric.com/fa/download/search.page?mode=manual&kisyu=/robot&q=CR750%2FCR751%20Series%20Controller%2C%20CR800%20Series%20Controller%20Ethernet%20Function%20Instruction%20Manual&sort=0&style=0&lang=2&category1=0&filter_discontinued=0&filter_bundled=0) from [Robot Industrial/Collaborative Robot MELFA Manual](https://www.mitsubishielectric.com/fa/download/search.page?mode=manual&kisyu=/robot).
+This manual is for <u>__ROS 2 Humble__</u> using __rtexc api version 1.0__. For more information regarding __rtexc api__, please refer to [CR750/CR751 Series Controller, CR800 Series Controller Ethernet Function Instruction Manual](https://www.mitsubishielectric.com/fa/download/search.page?mode=manual&kisyu=/robot&q=CR750%2FCR751%20Series%20Controller%2C%20CR800%20Series%20Controller%20Ethernet%20Function%20Instruction%20Manual&sort=0&style=0&lang=2&category1=0&filter_discontinued=0&filter_bundled=0) from [Robot Industrial/Collaborative Robot MELFA Manual](https://www.mitsubishielectric.com/fa/download/search.page?mode=manual&kisyu=/robot).
 
 ### __Build and Install__
 
@@ -26,7 +26,7 @@ git clone -b humble https://github.com/Mitsubishi-Electric-Asia/melfa_ros2_drive
 However, only the release tag versions are tested and covered by after-sales support.
 
 
-2. Install moveit servo and chomp
+2. Install MoveIt Servo and CHOMP
 
 ```
 sudo apt install ros-humble-moveit-chomp-optimizer-adapter
@@ -77,27 +77,27 @@ ros2 launch melfa_description view_rv7frl.launch.py
 
 ## __3. Launch ros2_control and MoveIt__
 
-1. Launch robot arm in Rviz2 simulation (the controller_type and robot_ip values do not affect simulation outcomes) [Terminal 1]
+1. Launch robot arm in RViz2 simulation (the controller_type and robot_ip values do not affect simulation outcomes) [Terminal 1]
 
 ```
 ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=true controller_type:=<CONTROLLER TYPE> robot_ip:=<ROBOT IP>
 ```
-#### Or you can try with a [real robot](./rt_real_setup.md) or [RT Toolbox3 simulator](./rt_sim_setup.md). If you have not created your RT Toolbox3 project file, refer to [this guide](./rt_toolbox3_setup.md)
+#### Or you can try with a [real robot](./rt_real_setup.md) or [RT ToolBox3 simulator](./rt_sim_setup.md). If you have not created your RT ToolBox3 project file, refer to [this guide](./rt_toolbox3_setup.md)
 </div>
 
-1. Launch robot arm with real robot or RT Toolbox3 simulator (the controller_type ["R" (or) "Q" (or) "D"] and robot_ip should be aligned with actual robot) [Terminal 1]
+1. Launch robot arm with real robot or RT ToolBox3 simulator (the controller_type ["R" (or) "Q" (or) "D"] and robot_ip should be aligned with actual robot) [Terminal 1]
 
 ```
 ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=false controller_type:=<CONTROLLER TYPE>  robot_ip:=<ROBOT IP>
 ```
 
-Eg: Connecting to RT Toolbox3 simulator or real robot.
+Eg: Connecting to RT ToolBox3 simulator or real robot.
 
 ```
 ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=false controller_type:="R" robot_ip:=192.168.3.100
 ```
 
-Eg: Rviz simulation.
+Eg: RViz simulation.
 
 ```
 ros2 launch melfa_bringup rv7frl_control.launch.py use_fake_hardware:=true controller_type:="R"
@@ -123,9 +123,9 @@ ros2 launch melfa_rv7frl_moveit_config rv7frl_moveit.launch.py
 
 ## __4. Examples of I/O operations using command line interface__
 
-This section will guide you through a simple demo of melfa_io_controllers using RT Toolbox3 simulator
+This section will guide you through a simple demo of melfa_io_controllers using RT ToolBox3 simulator
 
-### __RT Toolbox3 I/O Monitoring__
+### __RT ToolBox3 I/O Monitoring__
 
 1. Expand __Simulation__ &rArr; __Monitor__ &rArr; __Signal__. _Double click_ to open __General Purpose Signal__. On the far right of the window, _select_ __Monitor Setting__. Use the following settings as shown. Input settings do not matter as we will not be using it.
 
@@ -193,18 +193,18 @@ uint16 bitmask
 ---
 bool success
 ```
-| Parameter| Description|
-| ---      | ---      |
-| bitid    | Address of first bit|
-| mode     | IO Mode |
-| bitdata  | Data to be sent in uint16_t|
-| bitmask  | Bit mask for bitdata|
+| Parameter | Description                 |
+| --------- | --------------------------- |
+| bitid     | Address of first bit        |
+| mode      | IO Mode                     |
+| bitdata   | Data to be sent in uint16_t |
+| bitmask   | Bit mask for bitdata        |
 
-| IO Mode  | Description|
-| ---      | ---      |
-| READ_OUT | Reads Output Signal|
-| READ_IN  | Reads Input Signal |
-| WRITE_OUT| Writes Output Signal|
+| IO Mode   | Description          |
+| --------- | -------------------- |
+| READ_OUT  | Reads Output Signal  |
+| READ_IN   | Reads Input Signal   |
+| WRITE_OUT | Writes Output Signal |
 
 
 Example 4.1: Writing Hand output value to close Hand port 1:
@@ -276,11 +276,11 @@ ros2 topic echo /gpio_controller/plc_link_io_state
 
 Example 4.4: To configure using Topic
 
-| IO Mode  | bit_recv_type| bit_send_type| bitmask|
-| ---      | ---          |---           |---     |
-| READ_OUT | MXT_IO_OUT   |MXT_IO_OUT    |0x0     |
-| READ_IN  | MXT_IO_IN    |MXT_IO_NULL   |0x0     |
-| WRITE_OUT| MXT_IO_OUT   |MXT_IO_OUT    |0xFFFF  |
+| IO Mode   | bit_recv_type | bit_send_type | bitmask |
+| --------- | ------------- | ------------- | ------- |
+| READ_OUT  | MXT_IO_OUT    | MXT_IO_OUT    | 0x0     |
+| READ_IN   | MXT_IO_IN     | MXT_IO_NULL   | 0x0     |
+| WRITE_OUT | MXT_IO_OUT    | MXT_IO_OUT    | 0xFFFF  |
 
 ```
 ros2 topic pub /gpio_controller/gpio_command melfa_msgs/msg/GpioCommand '{bitid: 900, bitmask: 0xF00F, bit_recv_type: "MXT_IO_OUT", bit_send_type: "MXT_IO_OUT", bitdata: 0xFF}'
@@ -328,7 +328,7 @@ Some modifications are required for Gazebo-Fortress to launch correctly.
 
 In melfa_description/config/"robot model"_controllers.yaml, swap the commented lines
 
-```
+```yaml
 # example: melfa_description/config/rv7frl_controllers.yaml 
 
 rv7frl_controller:
@@ -361,7 +361,7 @@ Launch Gazebo-Fortress with the following command
 ```
 ros2 launch melfa_bringup rv7frl_control.launch.py use_sim:=true controller_type:="R" 
 ```
-Launch Moveit2 with the following command
+Launch MoveIt2 with the following command
 ```
 ros2 launch melfa_rv7frl_moveit_config rv7frl_moveit.launch.py use_sim_time:=true
 ```
@@ -369,6 +369,6 @@ ros2 launch melfa_rv7frl_moveit_config rv7frl_moveit.launch.py use_sim_time:=tru
 ### Other guides:
 - [Home page](./../README.md)
 - [MELFA ROS2 user guide](./melfa_ros2_driver.md) : Usage and Installation of MELFA ROS2.
-- [RT Toolbox3 Setup](./rt_toolbox3_setup.md) : Create your first RT Toolbox3 Project File for ROS2.
-- [RT Toolbox3 Simulator Setup](./rt_sim_setup.md) : Connect to RT Toolbox3 simulator as if it is a real robot.
-- [RT Toolbox3 Real Robot Setup](./rt_real_setup.md): Connect to a MELFA robot.
+- [RT ToolBox3 Setup](./rt_toolbox3_setup.md) : Create your first RT ToolBox3 Project File for ROS 2.
+- [RT ToolBox3 Simulator Setup](./rt_sim_setup.md) : Connect to RT ToolBox3 simulator as if it is a real robot.
+- [RT ToolBox3 Real Robot Setup](./rt_real_setup.md): Connect to a MELFA robot.

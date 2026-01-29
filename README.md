@@ -4,12 +4,12 @@
     
 ## __1. Overview__
 
-MELFA ROS2 Driver, co-developed with [ROS-Industrial Consortium Asia Pacific](https://rosindustrial.org/ric-apac), provides a suite of tools to enable the creation of advance solutions using our industry proven platform. Mitsubishi Electric provides a ROS2 driver, ROS2 GPIO controllers, robot description files and moveit_config packages for each robot; optimized in-house by our developers to ensure high performance. 
+MELFA ROS2 Driver, co-developed with [ROS-Industrial Consortium Asia Pacific](https://rosindustrial.org/ric-apac), provides a suite of tools to enable the creation of advance solutions using our industry proven platform. Mitsubishi Electric provides a ROS 2 driver, ROS 2 GPIO controllers, robot description files and moveit_config packages for each robot; optimized in-house by our developers to ensure high performance. 
 
 Introducing the next generation of intelligent robots, incorporating advanced solutions technology and “e-F@ctory”, technologies and concepts developed and proven using Mitsubishi Electric’s own production facilities that go beyond basic robotic performance to find ways of reducing the TCO in everything from planning and design through to operation and maintenance. 
 </br>
 
-[![ROS2 demo](https://markdown-videos.vercel.app/youtube/RP6lIamz9-8?si=v53JdDJ4vaFBPd5M)](https://youtu.be/RP6lIamz9-8?si=v53JdDJ4vaFBPd5M)
+[![ROS 2 demo](https://markdown-videos.vercel.app/youtube/RP6lIamz9-8?si=v53JdDJ4vaFBPd5M)](https://youtu.be/RP6lIamz9-8?si=v53JdDJ4vaFBPd5M)
 [![MEAU demo](https://markdown-videos.vercel.app/youtube/Ks6ji6kw68c?si=KCWWB8-P_m3ofB4V)](https://youtu.be/Ks6ji6kw68c?si=KCWWB8-P_m3ofB4V)
 - [Learn more](https://www.mitsubishielectric.com/fa/products/rbt/robot/index.html)
 - [Robot catalog](https://www.mitsubishielectric.com/app/fa/download/search.do?kisyu=/robot&mode=catalog)
@@ -32,7 +32,7 @@ MELFA ROS2 Driver consists of six main components: melfa_bringup, melfa_descript
 ### __melfa_driver__
 
 - supports [ros2_control](https://control.ros.org/humble/doc/getting_started/getting_started.html).
-- provides __real time communication__<sup>1</sup> hardware interface with our CR800/860-R/Q/D robot controllers via __rtexc api__ <sup>2</sup> from our [__MELFA ethernet SDK__](https://github.com/Mitsubishi-Electric-Asia/melfa_ethernet_sdk). 
+- provides __real time communication__<sup>1</sup> hardware interface with our CR800/860-R/Q/D robot controllers via __rtexc api__ <sup>2</sup>. 
 - connects to the robot controller via __rtexc api__ to control the robot via __MELFA BASIC VI__<sup>3</sup> __MXT__<sup>4</sup> command. The robot position command, robot state & I/O data are transmitted through this connection. 
 - includes quality of life features built into __rtexc api__ such as user configurable disconnection detection and debugging tools.
 
@@ -40,16 +40,16 @@ MELFA ROS2 Driver consists of six main components: melfa_bringup, melfa_descript
 
 - supports [ros2_control](https://control.ros.org/humble/doc/getting_started/getting_started.html).
 - user configurable io controllers.
-- provides ROS2 controllers for GPIO control
+- provides ROS 2 controllers for GPIO control
 
 ### __melfa_msgs__
 
-- provides ROS2 msgs for MELFA robots
+- provides ROS 2 msgs for MELFA robots
 
 ### __melfa_robot-model_moveit_config__
 
 - provides example MoveIt config and launch files for MELFA robots
-- supports OMPL, Pilz Industrial Planner, CHOMP and Moveit servo.
+- supports OMPL, Pilz Industrial Planner, CHOMP and MoveIt Servo.
 - optimized by our developers to ensure high performance in speed and accuracy.
 
 <table>
@@ -153,23 +153,23 @@ MELFA ROS2 Driver consists of six main components: melfa_bringup, melfa_descript
 
 ## __3. MELFA ROS2 Driver Usage and Installation__
 
-MELFA ROS2 Driver is designed to interface CR800 robot controllers with the ROS2 so that developers can leverage the contributions from the Open Source Community with an industry proven robot platform. Please select a guide below to get started.
+MELFA ROS2 Driver is designed to interface CR800 robot controllers with the ROS 2 so that developers can leverage the contributions from the Open Source Community with an industry proven robot platform. Please select a guide below to get started.
 </br>
 
 - [MELFA ROS2 user guide](./doc/melfa_ros2_driver.md) : Usage and Installation of MELFA ROS2.
-- [RT Toolbox3 Setup](./doc/rt_toolbox3_setup.md) : Create your first RT Toolbox3 Project File for ROS2.
-- [RT Toolbox3 Simulator Setup](./doc/rt_sim_setup.md) : Connect to RT Toolbox3 simulator as if it is a real robot.
-- [RT Toolbox3 Real Robot Setup](./doc/rt_real_setup.md): Connect to a MELFA robot.
+- [RT ToolBox3 Setup](./doc/rt_toolbox3_setup.md) : Create your first RT ToolBox3 Project File for ROS 2.
+- [RT ToolBox3 Simulator Setup](./doc/rt_sim_setup.md) : Connect to RT ToolBox3 simulator as if it is a real robot.
+- [RT ToolBox3 Real Robot Setup](./doc/rt_real_setup.md): Connect to a MELFA robot.
 
   
 <div> </div>
 
 ## __4. Other MELFA ROS2 Related Repositories__
 
-- [MELFA ROS2 8XS](https://github.com/Mitsubishi-Electric-Asia/melfa_ros2_8xs) : Sample package with MELSERVO integration for 6+2-axis articulated robot and 4+2-axis SCARA robot. Accompanied with RT Toolbox3 Project File to try in RT Toolbox3 simulator.
-- [MELFA ROS2 Integrated System Simulators](https://github.com/Mitsubishi-Electric-Asia/melfa_ros2_syssim) : Experience MELSOFT System Simulators for Programmable Logic Controllers and Human Machine Interface touch displays operating together seamlessly with a simple ROS2 program. Includes sample packages with MELSOFT project files. 
-- [MELFA ROS2 PLC](https://github.com/Mitsubishi-Electric-Asia/melfa_ros2_plc) : Sample program with simple integration for MELSEC iQ-R Controllers.
-- [MELFA ROS2 HMI](https://github.com/Mitsubishi-Electric-Asia/melfa_ros2_hmi) : Sample program with simple integration with GOT-HMI (Human Machine Interface) for iQ-platform robot controllers.
+- [MELFA ROS2 8XS](https://github.com/Mitsubishi-Electric-Asia/melfa_ros2_8xs) : Sample package with MELSERVO integration for 6+2-axis articulated robot and 4+2-axis SCARA robot. Accompanied with RT ToolBox3 Project File to try in RT ToolBox3 simulator.
+- [MELFA ROS2 PLC-HMI Integration](https://github.com/Mitsubishi-Electric-Asia/melfa_ros2_iq_simple) : Sample package to connect MELFA ROS2 Driver and PLC and HMI via Mitsubishi Electric’s iQ Platform.
+- [MELFA ROS2 Monitor](https://github.com/Mitsubishi-Electric-Asia/melfa_ros2_monitor) : Package to monitor data from MELFA via ROS 2 topics.
+
 
 <div> </div>
 
@@ -181,7 +181,7 @@ For articulated robots (RV), it is fairly straightforward as the variations that
 
 </br>
 
-<img src="./doc/figures/naming_convention_rv.png" width="1000" heigth="500" >
+<img src="./doc/figures/naming_convention_rv.png" width="1000" height="500" >
 
 </br>
 
@@ -189,7 +189,7 @@ For SCARA robots (RH), it has more variations that contribute to packages differ
 
 </br>
 
-<img src="./doc/figures/naming_convention_rh.png" width="1000" heigth="500" >
+<img src="./doc/figures/naming_convention_rh.png" width="1000" height="500" >
 
 </br>
 
@@ -197,6 +197,6 @@ __Environment specifications__, __Internal wiring__ and __Controller type__ do n
 
 
 ## __6. Contact us / Technical support__
-More Support & Service, please contact us [@MEAP](https://sg.mitsubishielectric.com/fa/en/contact.html) &#9743;. For contributing and reporting, refer to [this](./CONTRIBUTING.md) for development related enquiries.
+More Support & Service, please contact us [@MEAP](https://www.mitsubishielectric.com.sg/get-in-touch/) &#9743;. For contributing and reporting, refer to [this](./CONTRIBUTING.md) for development related enquiries.
 
 <div> </div>

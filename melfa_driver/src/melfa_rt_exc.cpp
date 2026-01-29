@@ -914,7 +914,7 @@ namespace MelfaEthernet
 #if _WIN32
                 sprintf_s(
 #endif
-                    console_msg, "POSE Commmand Feedback: x= %f, y= %f, z= %f, a= %f, b= %f, c= %f, l1= %f, l2= %f, sflg1= %d, sflg2= %d\n",
+                    console_msg, "POSE Command Feedback: x= %f, y= %f, z= %f, a= %f, b= %f, c= %f, l1= %f, l2= %f, sflg1= %d, sflg2= %d\n",
                           fb_pack.pos_FB.w.x,
                           fb_pack.pos_FB.w.y,
                           fb_pack.pos_FB.w.z,
@@ -1147,7 +1147,7 @@ namespace MelfaEthernet
 #if _WIN32
         sprintf_s(
 #endif
-            console_msg, "POSE Commmand Feedback: x= %f, y= %f, z= %f, a= %f, b= %f, c= %f, l1= %f, l2= %f, sflg1= %d, sflg2= %d\n",
+            console_msg, "POSE Command Feedback: x= %f, y= %f, z= %f, a= %f, b= %f, c= %f, l1= %f, l2= %f, sflg1= %d, sflg2= %d\n",
                   fb_pack.pos_FB.w.x,
                   fb_pack.pos_FB.w.y,
                   fb_pack.pos_FB.w.z,
