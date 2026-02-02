@@ -332,7 +332,7 @@ def generate_launch_description():
         launch_arguments={"gz_args":"-r-v 4 empty.sdf"}.items(),
         condition=IfCondition(use_sim),
     )
-    # Make topics available in ROS2
+    # Make topics available in ROS 2
     pkg_project_bringup = get_package_share_directory('melfa_bringup')
     gz_sim_bridge = Node(
         package="ros_gz_bridge",

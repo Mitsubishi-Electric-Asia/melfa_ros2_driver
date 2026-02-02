@@ -76,7 +76,7 @@ def generate_launch_description():
         "warehouse_host": warehouse_sqlite_path,
     }
 
-    # Initialize Moveit Configuration
+    # Initialize MoveIt Configuration
     moveit_config = (
         MoveItConfigsBuilder("rv80fr", package_name="melfa_rv80fr_moveit_config")
         .robot_description(
