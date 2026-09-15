@@ -1,3 +1,7 @@
+**Notice: Repository Migration (Effective Oct 1)**
+
+As of October 1, the MELFA ROS2 Driver has moved to the official Mitsubishi Electric GitHub organization. Please access the new page here: https://github.com/MitsubishiElectric
+
 <img src="./doc/figures/MELFA_t.png" width="400" height="98"> <img src="./doc/figures/ROS-AP-logo.png" width="208" height="98">
 
 # __MITSUBISHI ELECTRIC INDUSTRIAL ROBOT MELFA ROS2 DRIVER__
