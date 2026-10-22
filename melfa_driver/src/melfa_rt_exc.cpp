@@ -31,7 +31,7 @@ namespace MelfaEthernet
 {
 
     rtexc::rtexc(float custom_cycle_time) : MXTsend{}, MXTrecv{}, console_msg{}, sendText{}, recvText{},
-                                             packet_recv_lost(0), counter_(0)
+                                             packet_recv_lost(0), counter_(0), packet_lost_consec_cnt(0)
     {
 #ifdef _WIN32
         if (WSAStartup(MAKEWORD(1, 1), &Data) == SOCKET_ERROR)
@@ -289,7 +289,7 @@ namespace MelfaEthernet
 #if _WIN32
                 sprintf_s(
 #endif
-                    console_msg, "PULSE CMD Data: p1= %u, p1= %u, p3= %u, p4= %u, p5= %u, p6= %u, p7= %u, p8= %u\n",
+                    console_msg, "PULSE CMD Data: p1= %d, p2= %d, p3= %d, p4= %d, p5= %d, p6= %d, p7= %d, p8= %d\n",
                           MXTsend.dat.pls.p1,
                           MXTsend.dat.pls.p2,
                           MXTsend.dat.pls.p3,
@@ -488,7 +488,7 @@ namespace MelfaEthernet
         case MXT_TYP_FPOSE:
             if (RT_API_DEBUG_MODE)
                 std::cout << "Reading filtered POSE command values\n";
-            fb_pack.pos_EFB = MXTrecv.dat.pos;
+            fb_pack.pos_FFB = MXTrecv.dat.pos;
             break;
         case MXT_TYP_FB_POSE:
             if (RT_API_DEBUG_MODE)
@@ -562,7 +562,7 @@ namespace MelfaEthernet
         case MXT_TYP_FPOSE:
             if (RT_API_DEBUG_MODE)
                 std::cout << "Reading filtered POSE command values\n";
-            fb_pack.pos_EFB = MXTrecv.dat1.pos;
+            fb_pack.pos_FFB = MXTrecv.dat1.pos;
             break;
         case MXT_TYP_FB_POSE:
             if (RT_API_DEBUG_MODE)
@@ -635,7 +635,7 @@ namespace MelfaEthernet
         case MXT_TYP_FPOSE:
             if (RT_API_DEBUG_MODE)
                 std::cout << "Reading filtered POSE command values\n";
-            fb_pack.pos_EFB = MXTrecv.dat2.pos;
+            fb_pack.pos_FFB = MXTrecv.dat2.pos;
             break;
         case MXT_TYP_FB_POSE:
             if (RT_API_DEBUG_MODE)
@@ -709,7 +709,7 @@ namespace MelfaEthernet
         case MXT_TYP_FPOSE:
             if (RT_API_DEBUG_MODE)
                 std::cout << "Reading filtered POSE command values\n";
-            fb_pack.pos_EFB = MXTrecv.dat3.pos;
+            fb_pack.pos_FFB = MXTrecv.dat3.pos;
             break;
         case MXT_TYP_FB_POSE:
             if (RT_API_DEBUG_MODE)
