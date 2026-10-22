@@ -201,6 +201,6 @@ __Environment specifications__, __Internal wiring__ and __Controller type__ do n
 
 
 ## __6. Contact us / Technical support__
-More Support & Service, please contact us [@MITSUBISHI ELECTRIC](https://www.mitsubishielectric.co.jp/fa/products/rbt/robot/ex/openplatform/index.html) &#9743;. For contributing and reporting, refer to [this](./CONTRIBUTING.md) for development related enquiries.
+More Support & Service, please contact us [@MELCO](https://www.mitsubishielectric.co.jp/fa/products/rbt/robot/ex/openplatform/index.html) &#9743;. For contributing and reporting, refer to [this](./CONTRIBUTING.md) for development related enquiries.
 
 <div> </div>
