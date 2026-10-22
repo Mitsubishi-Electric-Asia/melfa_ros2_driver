@@ -329,7 +329,7 @@ namespace MelfaEthernet
          * @brief counts consecutive packet losses. Used to trigger robot_status.
          * 
          */
-        int packet_lost_consec_cnt;
+        int packet_lost_consec_cnt = 0;
         /**
          * @brief Local command packet
          *
