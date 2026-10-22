@@ -1,46 +1,98 @@
-# Contributing Guidelines
-Thank you for your interest in contributing to `melfa_ros2_driver`.
-Whether it's a bug report, new feature, correction, or additional
-documentation, we greatly value feedback and contributions from our community.
 
-Please read through this document before submitting any issues or pull requests to ensure we have all the necessary
-information to effectively respond to your bug report or contribution.
+# Introduction
+<!--冒頭の挨拶を記載します。[任意]-->
+* First of all, thank you for contributing!   
+* Please follow the guidelines below to contribute to the project.
 
+## Disclaimer
+<!--MELFA ROS2 Driverに関連するリポジトリを使用した際に発生する事象に三菱電機および著作者は一切責任を負わない旨を記載。[推奨]-->
+1. lease note that the MELFA ROS 2 Driver has not received safety certification.
+2. By using this driver, users acknowledge the potential for physical damage, personal injury, or destruction of hardware, and assume all responsibility for its use.
+3. Users shall assume all risks and legal liabilities. Mitsubishi Electric Corporation and the developers shall not be held liable for any damage or injury whatsoever.
+4. It is highly recommended to test in a simulation environment before executing any motions on the robot.
 
-## Reporting Bugs/Feature Requests
-We welcome you to use the GitHub issue tracker to report bugs or suggest features.
+## Types of Contributions
+<!--プロジェクトがどのような種類のコントリビューションを求めているのかを記載します。[推奨]-->
+This project accepts the following categories of contributions.
+1. **Bug Reports**:  If you find a bug, please create an Issue to report it. Provide as much detail as possible, including steps to reproduce the issue and relevant screenshots.
+2. **Feature Requests**: If you have ideas for new features, please open an Issue for discussion. Please explain the details of the feature and its potential benefits/use cases.
+3. **Code Contributions**:  If you would like to contribute code, please follow the workflow and steps described below.
+4. **Documentation**:  Improving documentation is also a valuable contribution. This includes updating existing documents, adding new guides, or fixing typos.
+5. **Testing**: You can contribute by testing the project and reporting any issues found. Writing unit tests or integration tests for the codebase is also highly appreciated.
+6. **Security Vulnerabilities**: For security reasons, please do not report vulnerabilities via Issues or Pull Requests. Instead, please send them to our mailing list: melfa-ros2-contact@pc.MitsubishiElectric.co.jp
 
-When filing an issue, please check [existing open][issues], or [recently closed][closed-issues], issues to make sure
- somebody else hasn't already reported the issue.
-Please try to include as much information as you can. Details like these are incredibly useful:
+## Contribution Workflow
+<!--コントリビューションの流れを記載します。[必須]-->
+1. **Check/Create an Issue**: Search existing Issues to see if the same problem or proposal has already been reported. If not, create a new Issue and provide as much detail as possible.
+2. **Fork the Repository**: Fork the repository to your GitHub account and clone it to your local machine.
+    ```bash
+    git clone https://github.com/Mitsubishi-Electric
+    ```
+3. **Create a branch**: Create a new branch for your work using a clear, descriptive name.
+    ```bash
+    git switch -c feature/feature-name
+    ```
+4. **Make changes**: Make your changes in the new branch. Please ensure your code follows the project's coding standards.
+5. **Commit the changes**: Commit changes using a clear and descriptive commit message.
+    ```bash
+    git add <Staged changes>
+    git commit -s -m "Add feature-name"
+    ```
+   Using the -s flag automatically appends the Signed-off-by: line required for the Developer Certificate of Origin (DCO) mentioned below.
+6. **Push your changes**: Push the changes to your forked repository.
+    ```bash
+    git push origin feature/feature-name
+    ```
+7. **Create a Pull Request**: On GitHub, create a Pull Request against the original repository.Clearly describe your changes and link any related issues.
 
-* A reproducible test case or series of steps
-* The version of our code being used
-* Any modifications you've made relevant to the bug
-* Anything unusual about your environment or deployment
+## Developer Certificate of Origin (DCO)
+<!--DCOを利用する場合に記載します。[推奨]-->
+This project adheres to the Developer Certificate of Origin (DCO).(https://developercertificate.org/)   
+The DCO is a framework for contributors to verify that they have the right to submit their contributions and that they are doing so under the project's license terms.
 
+[（Japanese Reference Translation）](https://developercertificate.opensource.jp/)
 
-## Contributing via Pull Requests
-Contributions via pull requests are much appreciated.
-Before sending us a pull request, please ensure that:
+1 **Agreeing to the DCO**  
+　By contributing to this project—whether through commits, Pull Requests,patches, or any other form—you agree to the terms of 　
+the Developer Certificate of Origin (DCO).
 
-1. You are working against the latest source on the *humble* branch.
-2. You check existing open, and recently merged, pull requests to make sure someone else hasn't addressed the problem already.
-3. You open an issue to discuss any significant work - we would hate for your time to be wasted.
+2 **Appending the Signed-off-by traile**  
+　All commits must contain a  `Signed-off-by:` line.
+  ```bash
+　Signed-off-by: Full Name <email address>
+  ```
+　Example: Signed-off-by: Taro Yamada <taro@example.com>
 
-To send us a pull request, please:
+3 How to add
+　Signed-off-by: The line is automatically appended when you use the following command.
+  ```bash
+　git commit -s
+  ```
+　or
+  ```bash
+　git commit --signoff
+  ```
+4 **Commits in a Pull Request**  
+* A Signed-off-by: line is required for every commit included in a Pull Request.  
+* When adding or amending commits, please double-check that each one still contains a valid sign-off.
 
-1. Fork the repository.
-2. Modify the source; please focus on the specific change you are contributing.
-  If you also reformat all the code, it will be hard for us to focus on your change.
-3. Ensure local tests pass.
-4. Commit to your fork using clear commit messages.
-5. Send a pull request, answering any default questions in the pull request interface.
-6. Pay attention to any automated CI failures reported in the pull request, and stay involved in the conversation.
+5 **Important Notes**  
+* When using code or text from third parties, please ensure you have the appropriate rights and permissions.  
+* For joint works, please obtain the necessary consent from all co-authors.   
+* If your contribution was created as part of your duties for a company or organization,  please verify that you are authorized to submit it.   
+* Please note that the Signed-off-by: line does not constitute a transfer of copyright ownership.
 
-GitHub provides additional documentation on [forking a repository](https://help.github.com/articles/fork-a-repo/) and
+## Issue and Pull Request Guidelines
+<!--Issueとプルリクエストのガイドラインを記載します。[推奨]-->
+- **Issue**: Please provide as much detail as possible for bug reports and feature suggestions. Including reproduction steps and screenshots is highly appreciated.
+- **Pull Request**: Please link any related issue numbers and provide a concise description of your changes.
+- GitHub provides additional documentation on [forking a repository](https://help.github.com/articles/fork-a-repo/) and
 [creating a pull request](https://help.github.com/articles/creating-a-pull-request/).
 
+## Communication
+<!--コミュニケーションをとるための方法を記載します。[必須]-->
+- Please leverage the Issues or Discussions tabs for any questions or project-related conversations.
+- While we aim to respond as promptly as possible, please understand that it may take some time to provide a thorough reply. We appreciate your patience.
 
 ## Licensing
 Any contribution that you make to this repository will
